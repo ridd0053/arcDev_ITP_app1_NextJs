@@ -16,6 +16,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
+import Hidden from "@material-ui/core/Hidden";
 
 // Adds shadow effect to the header when user scrolls the page
 function ElevationScroll(props) {
@@ -206,7 +207,9 @@ export default function Header(props) {
                 }
                 break;
               case "/estimate":
-                props.setTabindex(routes.length);
+                if(props.tabIndex !== 5) {
+                  props.setTabindex(5);
+                }
                 break;
               default:
                 break;
@@ -314,7 +317,12 @@ export default function Header(props) {
                     <Button component={Link} href="/" className={classes.logoContainer} onClick={() => props.setTabindex(0)} disableRipple>
                         <img alt="logo" src="/assets/logo.svg" className={classes.logo} />
                     </Button>
-                    {matches ? drawer : tabs}
+                    <Hidden mdDown>
+                      {tabs}
+                    </Hidden>
+                    <Hidden lgUp>
+                      {drawer}
+                    </Hidden>
                 </Toolbar>
             </AppBar>
         </ElevationScroll>

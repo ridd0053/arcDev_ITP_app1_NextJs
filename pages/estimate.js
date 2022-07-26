@@ -15,6 +15,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
 import emailjs from '@emailjs/browser';
+import Head from "next/head";
 
 import estimateAnimation from "../src/animations/estimateAnimation/data.json";
 
@@ -540,7 +541,7 @@ export default function Estimate(props) {
 
      const placeRequest = (e) => {
         setLoading(true)
-        emailjs.send(process.env.DB_MY_SERVICE_ID, process.env.DB_MY_TEMPLATE_ID, {sort: "Estimate request", name, email, phone, message, service, platforms, features, customFeatures, category, users, total}, process.env.DB_MY_PUBLIC_KEY).then(function(response) {
+        emailjs.send(process.env.NEXT_PUBLIC_MY_SERVICE_ID, process.env.NEXT_PUBLIC_MY_TEMPLATE_ID, {sort: "Estimate request", name, email, phone, message, service, platforms, features, customFeatures, category, users, total}, process.env.NEXT_PUBLIC_MY_PUBLIC_KEY).then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             setLoading(false)
             setName("");
@@ -668,10 +669,17 @@ export default function Estimate(props) {
 
     return (
         <Grid container direction="row">
+            <Head>
+                <title key="title">Free Custom Software Estimate | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Estimate' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/estimate' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/estimate" />
+            </Head>
             {/* Questions */}
             <Grid item container direction="column" lg alignItems={matchesMD ? "center" : undefined}>
                 <Grid item style={{marginTop: "2em", marginLeft: matchesMD ? 0 : "5em"}}>
-                    <Typography variant="h2" align={matchesMD ? "center" : undefined}>
+                    <Typography variant="h1" align={matchesMD ? "center" : undefined}>
                         Estimate
                     </Typography>
                 </Grid>
@@ -683,7 +691,7 @@ export default function Estimate(props) {
                 {questions.filter(question => question.active).map((question, index) => (
                     <React.Fragment key={index}>
                         <Grid item>
-                            <Typography variant="h2" align="center" style={{fontWeight: 500, marginTop:"5em", fontSize:"2.25rem", lineHeight:1.25, marginLeft: matchesSM ? "1em" : 0, marginRight: matchesSM ? "1em" : 0}}>
+                            <Typography variant="h1" align="center" style={{fontWeight: 500, marginTop:"5em", fontSize:"2.25rem", lineHeight:1.25, marginLeft: matchesSM ? "1em" : 0, marginRight: matchesSM ? "1em" : 0}}>
                                 {question.title}
                             </Typography>
                             <Typography variant="body1" align="center" style={{marginBottom: "2.5em"}} gutterBottom>
@@ -734,7 +742,7 @@ export default function Estimate(props) {
                 <DialogTitle>
                     <Grid container justify="center">
                         <Grid item>
-                            <Typography variant="h2" align="center">
+                            <Typography variant="h1" align="center">
                                 Estimate
                             </Typography>
                         </Grid>

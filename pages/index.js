@@ -8,6 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
+import Head from "next/head";
 
 import CallToAction from "../src/ui/CallToAction"
 
@@ -133,10 +134,17 @@ export default function LandingPage(props) {
     }
     return (
         <Grid container direction="column" className={classes.mainContainer}>
+            <Head>
+                <title key="title">Custom Software, Mobile Apps and Websites | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Home' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com" />
+            </Head>
             <Grid item> {/* Hero block*/}
                 <Grid container justify="flex-end" alignItems="center" direction="row">
                     <Grid sm item className={classes.heroTextContainer}>
-                        <Typography variant="h2" align="center">
+                        <Typography variant="h1" align="center">
                             Bringing West Cost Technology <br /> to the Midwest
                         </Typography>
                         <Grid container justify="center" className={classes.buttonContainer}>
@@ -255,7 +263,7 @@ export default function LandingPage(props) {
                     <Grid item container style={{ textAlign: matchesXS ? "center" : "inherit" }} direction={matchesXS ? "column": "row"}>
                         <Grid item sm style={{ marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em" }}>
                             <Grid container direction="column" style={{marginBottom: matchesXS ? "10em" : 0 }}>
-                                <Typography variant="h2" style={{color: "white"}}>About Us</Typography>
+                                <Typography variant="h1" style={{color: "white"}}>About Us</Typography>
                                 <Typography variant="subtitle2" gutterBottom>Let's get personal</Typography>
                                 <Grid item>
                                     <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/about" onClick={() => {props.setTabindex(3);}}>
@@ -267,7 +275,7 @@ export default function LandingPage(props) {
                         </Grid>
                         <Grid item sm style={{ marginRight: matchesXS ? 0 : matchesSM ? "2em" : "5em", textAlign: matchesXS ? "center" : "right" }}>
                             <Grid container direction="column">
-                                <Typography variant="h2" style={{color: "white"}}>Contact Us</Typography>
+                                <Typography variant="h1" style={{color: "white"}}>Contact Us</Typography>
                                 <Typography variant="subtitle2" gutterBottom>Say hello!</Typography>
                                 <Grid item>
                                     <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/contact" onClick={() => {props.setTabindex(4);}}>

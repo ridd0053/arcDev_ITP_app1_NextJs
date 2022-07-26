@@ -5,6 +5,11 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Hidden from "@material-ui/core/Hidden";
+import Head from "next/head";
+import PeopleIcon from "@material-ui/icons/People";
+import PagesIcon from "@material-ui/icons/Pages";
+import PetsIcon from "@material-ui/icons/Pets";
+
 
 
 import CallToAction from "../src/ui/CallToAction"
@@ -28,12 +33,18 @@ const useStyles = makeStyles(theme => ({
       avatar: {
         width:"25em",
         height: "25em",
+        backgroundColor: theme.palette.common.orange,
         [theme.breakpoints.down("sm")]: {
             width:"20em",
             height: "20em",
             maxHeight: 300,
             maxWidth: 300,
           }
+      },
+      PeopleIcon: {
+        color: theme.palette.common.blue,
+        width:150,
+        height:150,
       }
  }))
 
@@ -43,9 +54,16 @@ const useStyles = makeStyles(theme => ({
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
     return (
         <Grid container direction="column">
+            <Head>
+                <title key="title">About Us - History {"&"} Team | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | About Us' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/about' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/about" />
+            </Head>
             {/* Title*/}
             <Grid item className={classes.rowContainer} style={{marginTop: matchesMD ? "1em" : "2em"}}>
-                <Typography variant="h2" align={matchesMD ? "center" : undefined}>About Us</Typography>
+                <Typography variant="h1" align={matchesMD ? "center" : undefined}>About Us</Typography>
             </Grid>
             {/* Mission Statement */}
             <Grid item container justify="center" className={classes.rowContainer} style={{marginTop: "3em"}}>
@@ -101,59 +119,49 @@ const useStyles = makeStyles(theme => ({
                 </Grid>
                 <Grid item>
                     <Typography variant="body1" paragraph align="center">
-                        Zachary Reece, Founder
+                        Student
                     </Typography>
                     <Typography variant="body1" paragraph align="center">
-                        I started coding when I was 9 years old
+                        I just started coding.
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Avatar alt="founder" src="/assets/founder.jpg" className={classes.avatar} />
+                    <Avatar alt="founder" className={classes.avatar}>
+                        <PeopleIcon className={classes.PeopleIcon} />
+                    </Avatar>
                 </Grid>
                 <Grid item container>
                         <Hidden lgUp>                    
                             <Grid item lg style={{maxWidth:"45em", padding:"1.25em"}}>
                                 <Typography variant="body1" paragraph align="center">
-                                    I taught myself basic coding from a library book in third grade, and ever
-                                    since then my passion has solely been set on learning — learning about
-                                    computers, learning mathematics and philosophy, studying design, always
-                                    just learning
-                                </Typography>
-                                <Typography variant="body1" paragraph align="center">
-                                    Now I'm ready to apply everything I've learned, and to help others with the ituition I have developed.
+                                    This is a project that I made for school. Based on an online course!
                                 </Typography>
                             </Grid>
                         </Hidden>
                     <Grid item container direction="column" lg alignItems={matchesMD ? "center" : undefined} style={{marginBottom: matchesMD ? "2.5em" :  0 }}>
                         <Grid item>
-                            <img src="/assets/yearbook.svg"  alt="Yearbook page about founder" style={{maxWidth: matchesMD ? 300 : undefined}}/>
+                            <PagesIcon style={{width: 150, height: 150, maxWidth: matchesMD ? 300 : undefined}} />
                         </Grid>
                         <Grid item>
                             <Typography variant="caption">
-                                a page from founder's Sophomore yearbook
+                                a page
                             </Typography>
                         </Grid>
                     </Grid>
                     <Hidden mdDown>                    
                         <Grid item lg style={{maxWidth:"45em", padding:"1.25em"}}>
                             <Typography variant="body1" paragraph align="center">
-                                I taught myself basic coding from a library book in third grade, and ever
-                                since then my passion has solely been set on learning — learning about
-                                computers, learning mathematics and philosophy, studying design, always
-                                just learning
-                            </Typography>
-                            <Typography variant="body1" paragraph align="center">
-                                Now I'm ready to apply everything I've learned, and to help others with the ituition I have developed.
+                                This is a project that I made for school. Based on an online course!
                             </Typography>
                         </Grid>
                     </Hidden>
                     <Grid item container direction="column" alignItems={matchesMD ? "center" : "flex-end"} lg>
                         <Grid item>
-                            <img src="/assets/puppy.svg" alt="grey spotted puppy" style={{maxWidth: matchesMD ? 300 : undefined}}  />
+                            <PetsIcon style={{width: 150, height: 150, maxWidth: matchesMD ? 300 : undefined}} />
                         </Grid>
                         <Grid item>
                             <Typography variant="caption">
-                                a miniature dapple dachshund, Sterling
+                                Pets
                             </Typography>
                         </Grid>
                     </Grid>

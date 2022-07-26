@@ -7,10 +7,12 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
 import Hidden from "@material-ui/core/Hidden"
+import Head from "next/head";
 
 import integrationAnimation from "../src/animations/integrationAnimation/data.json";
 
 import CallToAction from "../src/ui/CallToAction"
+
 
 const useStyles = makeStyles(theme => ({
     rowContainer: {
@@ -48,6 +50,13 @@ export default function MobileApps(props) {
 
     return  (
         <Grid container direction="column">
+            <Head>
+                <title key="title">iOS/Android App Design and Development | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Mobile Apps' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/mobileapps' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/mobileapps" />
+            </Head>
             <Grid item container direction="row" justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
@@ -58,7 +67,7 @@ export default function MobileApps(props) {
                 </Hidden>
                 <Grid item container direction="column" className={classes.heading}>
                     <Grid item>
-                        <Typography align={matchesMD ? "center" : undefined} variant="h2">
+                        <Typography align={matchesMD ? "center" : undefined} variant="h1">
                             iOS/Android App Development
                         </Typography>
                     </Grid>

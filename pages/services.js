@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
+import Head from "next/head";
 
 import ButtonArrow from "../src/ui/ButtonArrow"
 
@@ -45,8 +46,15 @@ export default function Services(props) {
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     return (
         <Grid container direction="column">
+            <Head>
+                <title key="title">Top Custom Software Development Services | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Services' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/services' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/services" />
+            </Head>
             <Grid item style={{marginLeft: matchesSM ? 0 : "5em", marginTop: matchesSM ? "1em" : "2em"}}>
-                <Typography align={matchesSM ? "center" : undefined} variant="h2" gutterBottom >
+                <Typography align={matchesSM ? "center" : undefined} variant="h1" gutterBottom >
                     Services
                 </Typography>
             </Grid>

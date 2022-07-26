@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
 import Hidden from "@material-ui/core/Hidden"
+import Head from "next/head";
 
 import documentsAnimation from "../src/animations/documentsAnimation/data"
 import scaleAnimation from "../src/animations/scaleAnimation/data"
@@ -80,6 +81,13 @@ export default function CustomSoftware(props) {
 
     return (
         <Grid container direction="column">
+            <Head>
+                <title key="title">Custom Software Development and Design - Free Estimate</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Custom Software' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/customsoftware' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/customsoftware" />
+            </Head>
             <Grid item container direction="row" justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
@@ -90,7 +98,7 @@ export default function CustomSoftware(props) {
                 </Hidden>
                 <Grid item container direction="column" className={classes.heading}>
                     <Grid item>
-                        <Typography align={matchesMD ? "center" : undefined} variant="h2">
+                        <Typography align={matchesMD ? "center" : undefined} variant="h1">
                             Custom Software
                         </Typography>
                     </Grid>

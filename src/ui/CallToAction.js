@@ -68,7 +68,7 @@ export default function CallToAction(props) {
             <Grid item style={{ marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ? "center" : "inherit"}}>
                 <Grid container direction="column">
                     <Grid item>
-                        <Typography variant="h2" gutterBottom>
+                        <Typography variant="h1" gutterBottom>
                             Simple Software. <br /> Revolutionary Results.
                         </Typography>
                         <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }} gutterBottom>

@@ -4,6 +4,7 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Head from "next/head";
 
 import technologyAnimation from "../src/animations/technologyAnimation/data.json";
 
@@ -36,9 +37,16 @@ export default function Revolution(props) {
     };
     return (
         <Grid container direction="column">
+            <Head>
+                <title key="title">The Revolution - Cutting-Edge Software | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Revolution' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/revolution' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/revolution" />
+            </Head>
             {/* Header */}
             <Grid item className={classes.rowContainer} style={{marginTop: "2em"}}> 
-                <Typography align={matchesMD ? "center" : undefined} variant="h2" style={{fontFamily: "Pacifico"}}>The Revolution</Typography>
+                <Typography align={matchesMD ? "center" : undefined} variant="h1" style={{fontFamily: "Pacifico"}}>The Revolution</Typography>
             </Grid>
             {/* Vision */}
             <Grid item container direction={matchesMD ? "column" : "row"} alignItems="center" className={classes.rowContainer} style={{ marginTop: "5em" }}>

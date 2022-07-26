@@ -11,6 +11,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import emailjs from '@emailjs/browser';
+import Head from "next/head";
 
 import ButtonArrow from "../src/ui/ButtonArrow"
 
@@ -128,7 +129,7 @@ const useStyles = makeStyles(theme => ({
 
     const sendEmail = (e) => {
         setLoading(true)
-        emailjs.send(process.env.DB_MY_SERVICE_ID, process.env.DB_MY_TEMPLATE_ID, {sort: "Contactform", name, email, phone, message}, process.env.DB_MY_PUBLIC_KEY).then(function(response) {
+        emailjs.send(process.env.NEXT_PUBLIC_MY_SERVICE_ID, process.env.NEXT_PUBLIC_MY_TEMPLATE_ID, {sort: "Contactform", name, email, phone, message}, process.env.NEXT_PUBLIC_MY_PUBLIC_KEY).then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             setLoading(false)
             setName("");
@@ -163,11 +164,18 @@ const useStyles = makeStyles(theme => ({
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
     return (
         <Grid container direction="row">
+            <Head>
+                <title key="title">Contact Us | Arc Development</title>
+                <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
+                <meta property='og:title' content='Course Website | Contact' key="og:title" />
+                <meta property='og:url' content='itpArcCourseMatUdem.com/contact' key="og:url" />
+                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/contact" />
+            </Head>
             <Grid item container direction="column" justify="center" alignItems="center" style={{marginBottom: matchesMD ? "5em" : 0, marginTop: matchesSM ?  "1em" : matchesMD ? "5em" : 0}} lg={4} xl={3}>
                 <Grid item>
                     <Grid container direction="column">
                         <Grid item>
-                            <Typography align={matchesMD ? "center" : undefined} variant="h2" style={{lineHeight: 1}}>
+                            <Typography align={matchesMD ? "center" : undefined} variant="h1" style={{lineHeight: 1}}>
                                 Contact Us
                             </Typography>
                             <Typography align={matchesMD ? "center" : undefined} variant="body1" style={{color: theme.palette.common.blue}}>
@@ -293,7 +301,7 @@ const useStyles = makeStyles(theme => ({
                 <Grid item style={{ marginLeft: matchesMD ? 0 : "3em", textAlign: matchesMD ? "center" : "inherit"}}>
                     <Grid container direction="column">
                         <Grid item>
-                            <Typography variant="h2" align={matchesMD ? "center" : undefined} gutterBottom>
+                            <Typography variant="h1" align={matchesMD ? "center" : undefined} gutterBottom>
                                 Simple Software. <br /> Revolutionary Results.
                             </Typography>
                             <Typography variant="subtitle2" align={matchesMD ? "center" : undefined}  style={{ fontSize: "1.5rem" }} gutterBottom>
