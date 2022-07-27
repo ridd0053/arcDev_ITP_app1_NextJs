@@ -138,12 +138,12 @@ export default function Revolution(props) {
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid item container justify={matchesMD ? "center" : "flex-end"} lg>
+                <Grid item container justifyContent={matchesMD ? "center" : "flex-end"} lg>
                     <Lottie options={defaultOptions} style={{ maxWidth: "40em", margin: 0 }} />
                 </Grid>
             </Grid>
             {/* Process */}
-            <Grid item container direction="row" justify="center" className={classes.rowContainer}>
+            <Grid item container direction="row" justifyContent="center" className={classes.rowContainer}>
                 <Grid item>
                     <Typography variant="h4" gutterBottom>
                         Process
@@ -151,7 +151,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Consultation */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#B3B3B3", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#B3B3B3", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -186,7 +186,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Mockup */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#FF7373", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#FF7373", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -215,7 +215,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Review 1 */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#39B54A", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#39B54A", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -241,11 +241,11 @@ export default function Revolution(props) {
                     </Grid>
                 </Grid>
                 <Grid item lg style={{alignSelf: "center"}}>
-                    <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" />
+                    <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" style={{maxWidth:"40em"}}/>
                 </Grid>
             </Grid>
             {/* Design */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined}  className={classes.rowContainer} style={{ backgroundColor: "#A67C52", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined}  className={classes.rowContainer} style={{ backgroundColor: "#A67C52", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -269,7 +269,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Review 2 */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#39B54A", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#39B54A", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -289,11 +289,11 @@ export default function Revolution(props) {
                     </Grid>
                 </Grid>
                 <Grid item lg style={{alignSelf: "center"}}>
-                    <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" />
+                    <img src="/assets/reviewIcon.svg" alt="magnifying glass" width="100%" style={{maxWidth:"40em"}}  />
                 </Grid>
             </Grid>
             {/* Build */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#FBB03B", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#FBB03B", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -333,7 +333,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Launch */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#C1272D", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#C1272D", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -363,7 +363,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Maintain */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#8E45CE", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#8E45CE", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -389,7 +389,7 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Iterate */}
-            <Grid item container direction={matchesMD ? "column" : "row"} justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#29ABE2", height: "90em" }}>
+            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: "#29ABE2", height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>

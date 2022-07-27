@@ -64,7 +64,7 @@ export default function Footer(props) {
     return (
         <footer className={classes.footer}>
             <Hidden mdDown>
-                <Grid container justify="center" className={classes.mainContainer}>
+                <Grid container justifyContent="center" className={classes.mainContainer}>
                     <Grid item className={classes.gridItem} >
                         <Grid container direction="column" spacing={2}>
                             <Grid item className={classes.link} component={Link} href="/" onClick={() => props.setTabindex(0)}>
@@ -127,7 +127,7 @@ export default function Footer(props) {
                 </Grid>
             </Hidden>
             <img src="/assets/footerAdornment.svg" alt="black decorative slash" className={classes.adornment} />
-            <Grid container justify="flex-end" className={classes.socialContainer} spacing={2}>
+            <Grid container justifyContent="flex-end" className={classes.socialContainer} spacing={2}>
                 <Grid item component={"a"} href="http://www.facebook.com" rel="noopener noreferrer" target="_blank" >
                     <img alt="facebook logo" src="/assets/facebook.svg" className={classes.icon} />
                 </Grid>

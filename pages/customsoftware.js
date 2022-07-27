@@ -88,7 +88,7 @@ export default function CustomSoftware(props) {
                 <meta property='og:url' content='itpArcCourseMatUdem.com/customsoftware' key="og:url" />
                 <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/customsoftware" />
             </Head>
-            <Grid item container direction="row" justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
+            <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
                         <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/services" onClick={() => {props.setTabindex(1); props.setSelectedIndex(0)}}>
@@ -132,7 +132,7 @@ export default function CustomSoftware(props) {
                     </Grid>
                 </Hidden>
             </Grid> {/* End Header */}
-            <Grid item container direction="row" justify="center" style={{marginTop: "10em", marginBottom: "15em"}} className={classes.rowContainer}> {/* Icons */}
+            <Grid item container direction="row" justifyContent="center" style={{marginTop: "10em", marginBottom: "15em"}} className={classes.rowContainer}> {/* Icons */}
                 <Grid item container direction="column" md style={{maxWdith: "40em"}} alignItems="center">
                     <Grid item>
                         <Typography variant="h4" gutterBottom>
@@ -164,7 +164,7 @@ export default function CustomSoftware(props) {
                     </Grid>
                 </Grid>
             </Grid> {/* End Icons */}
-            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} justify="space-between" className={classes.rowContainer}> {/* Animations */}
+            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} justifyContent={matchesMD ? "center" : "space-between"} className={classes.rowContainer} style={{display: matchesMD ? "grid" : undefined}}> {/* Animations */}
                 <Grid item container className={classes.itemContainer} md style={{marginBottom: matchesMD ? "15em" : 0}} direction={matchesSM ? "column" : "row"} > {/* Digital Documents and Data */}
                     <Grid item container direction="column" md>
                         <Grid item>
@@ -242,7 +242,7 @@ export default function CustomSoftware(props) {
                     </Grid>
                 </Grid>
             </Grid> {/* End Root */}
-            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} justify="space-between" style={{marginBottom:"20em"}} className={classes.rowContainer}> {/* Second Animations */}
+            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} justifyContent={matchesMD ? "center" : "space-between"} style={{marginBottom:"20em", display: matchesMD ? "grid" : undefined}} className={classes.rowContainer}> {/* Second Animations */}
                 <Grid item container className={classes.itemContainer} md style={{marginBottom: matchesMD ? "15em" : 0}} direction={matchesSM ? "column" : "row"}> {/* Automation */}
                     <Grid item container direction="column" md>
                         <Grid item>

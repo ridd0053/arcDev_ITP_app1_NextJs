@@ -74,7 +74,7 @@ export default function CallToAction(props) {
                         <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }} gutterBottom>
                             Take advantage of the 21st Century.
                         </Typography>
-                        <Grid container item justify={matchesSM ? "center" : undefined}>
+                        <Grid container item justifyContent={matchesSM ? "center" : undefined}>
                             <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution" onClick={() => {props.setTabindex(2);}}>
                                 <span style={{marginRight: 5}}> Learn More </span>
                                 <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>

@@ -57,7 +57,7 @@ export default function MobileApps(props) {
                 <meta property='og:url' content='itpArcCourseMatUdem.com/mobileapps' key="og:url" />
                 <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/mobileapps" />
             </Head>
-            <Grid item container direction="row" justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
+            <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
                         <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/customsoftware" onClick={() => {props.setTabindex(1); props.setSelectedIndex(1)}}>
@@ -115,7 +115,7 @@ export default function MobileApps(props) {
                     </Grid>
                 </Grid>
                 <Grid item md>
-                    <Lottie options={defaultOptions} style={{ maxWidth: "20em" }} />
+                    <Lottie options={defaultOptions} style={{ maxWidth: matchesMD ? "15em" : "20em", height: matchesMD ? "20em" : undefined  }} />
                 </Grid>
                 <Grid item container direction="column" md>
                 <Grid item>
@@ -136,7 +136,7 @@ export default function MobileApps(props) {
                     </Grid>
                 </Grid>
             </Grid> {/* End Integration & Simultaneous Platform Support  */}
-            <Grid item container direction={matchesMD ? "column" : "row"} className={classes.rowContainer} style={{ marginBottom: "15em" }}> {/* Extend  */}
+            <Grid item container direction={matchesMD ? "column" : "row"} className={classes.rowContainer} style={{ marginBottom: "15em", display: matchesMD ? "grid" : undefined }}> {/* Extend  */}
                 <Grid item container direction="column" alignItems="center" md>
                     <Grid item>
                         <Typography variant="h4" align="center" gutterBottom>
