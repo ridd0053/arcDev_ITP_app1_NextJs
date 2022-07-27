@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { cloneDeep } from 'lodash';
 import Lottie from "react-lottie"
 import { makeStyles, useTheme } from "@material-ui/styles";
@@ -306,9 +306,10 @@ const softwareQuestions = [
 export default function Estimate(props) { 
     const classes =  useStyles();
     const theme = useTheme();
-    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+
+    const myRef = useRef(null)
 
     const [questions, setQuestions] = useState(defaultQuestions);
     const [dialogOpen, setDialogOpen] = useState(false); 
@@ -346,6 +347,9 @@ export default function Estimate(props) {
     }
 
     const nextQuestion = () => {
+        if (matchesSM) {
+            window.scrollTo(0, myRef.current.offsetTop)
+        }
         const newQuestions = cloneDeep(questions);
         const currentlyActive = newQuestions.filter(question => question.active)
         const activeIndex = currentlyActive[0].id - 1
@@ -356,6 +360,9 @@ export default function Estimate(props) {
     }
 
     const previousQuestion = () => {
+        if (matchesSM) {
+            window.scrollTo(0, myRef.current.offsetTop)
+        }
         const newQuestions = cloneDeep(questions);
         const currentlyActive = newQuestions.filter(question => question.active)
         const activeIndex = currentlyActive[0].id - 1
@@ -407,6 +414,9 @@ export default function Estimate(props) {
 
         switch(newSelected.title) {
             case "Custom Software Development":
+                if (matchesSM) {
+                    window.scrollTo(0, myRef.current.offsetTop)
+                }
                 setQuestions(softwareQuestions)
                 setService(newSelected.title)
                 setPlatforms([])
@@ -416,6 +426,9 @@ export default function Estimate(props) {
                 setUsers("")
                 break;
             case "iOS/Android App Development":
+                if (matchesSM) {
+                    window.scrollTo(0, myRef.current.offsetTop)
+                }
                 setQuestions(softwareQuestions)
                 setService(newSelected.title)
                 setPlatforms([])
@@ -425,6 +438,9 @@ export default function Estimate(props) {
                 setUsers("")
                 break;
             case "Website Development":
+                if (matchesSM) {
+                    window.scrollTo(0, myRef.current.offsetTop)
+                }
                 setQuestions(websiteQuestions)
                 setService(newSelected.title)
                 setPlatforms([])
@@ -521,9 +537,14 @@ export default function Estimate(props) {
      };
      const esitimateDisabled = () => {
         let disabled = true
-        const emptySelections = questions.map( question =>
+        const emptySelections = questions.filter(question => question.title !== "Which features do you expect to use?")
+        .map( question =>
             question.options.filter(option => option.selected)).filter(question =>
-                question.length === 0)
+                question.length === 0);
+            
+        const featuresSelected = questions.filter(question => question.title === "Which features do you expect to use?")
+        .map(question => question.options.filter(option => option.selected))
+        .filter(selections => selections.length > 0);
 
         if ( questions.length === 2 ) {
             if( emptySelections.length === 1 ) {
@@ -533,7 +554,7 @@ export default function Estimate(props) {
         else if( questions.length === 1) {
             disabled = true
         } 
-        else if( emptySelections.length < 3 && questions[questions.length - 1].options.filter(option => option.selected).length > 0) {
+        else if( emptySelections.length === 1 && featuresSelected.length > 0) {
             disabled = false
         }
         return disabled
@@ -690,7 +711,7 @@ export default function Estimate(props) {
             <Grid item container direction="column" alignItems="center" lg style={{marginRight: matchesMD ? 0 : "2em", marginBottom:"25em"}}>
                 {questions.filter(question => question.active).map((question, index) => (
                     <React.Fragment key={index}>
-                        <Grid item>
+                        <Grid item ref={myRef}>
                             <Typography variant="h1" align="center" style={{fontWeight: 500, marginTop:"5em", fontSize:"2.25rem", lineHeight:1.25, marginLeft: matchesSM ? "1em" : 0, marginRight: matchesSM ? "1em" : 0}}>
                                 {question.title}
                             </Typography>
@@ -719,7 +740,7 @@ export default function Estimate(props) {
                     </React.Fragment>
                 ))}
     
-                <Grid item container justify="space-between" style={{width: "18em", marginTop:"3em"}}>
+                <Grid item container justifyContent="space-between" style={{width: "18em", marginTop:"3em"}}>
                     <Grid item>
                         <IconButton disabled={navigationPreviousDisabled()} onClick={previousQuestion}>
                             <img src={navigationPreviousDisabled() ? "/assets/backArrowDisabled.svg" : "/assets/backArrow.svg"} alt="Previous question" />
@@ -740,7 +761,7 @@ export default function Estimate(props) {
             <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} style={{zIndex: 1302}} 
             fullWidth maxWidth="lg" fullScreen={matchesSM}>
                 <DialogTitle>
-                    <Grid container justify="center">
+                    <Grid container justifyContent="center">
                         <Grid item>
                             <Typography variant="h1" align="center">
                                 Estimate
@@ -749,7 +770,7 @@ export default function Estimate(props) {
                     </Grid>
                 </DialogTitle>
                 <DialogContent>
-                    <Grid container justify="space-around" direction={matchesSM ? "column" : "row"} alignItems={matchesSM ? "center" : undefined}>
+                    <Grid container justifyContent="space-around" direction={matchesSM ? "column" : "row"} alignItems={matchesSM ? "center" : undefined}>
                         <Grid item container direction="column" md={7} style={{maxWidth: "20em"}}>
                             <Grid item style={{marginBottom: "0.5em"}}>
                                 <TextField label="Name" id="name" value={name} fullWidth onChange={(event) => setName(event.target.value)} />
