@@ -67,7 +67,7 @@ export default function MobileApps(props) {
                 </Hidden>
                 <Grid item container direction="column" className={classes.heading}>
                     <Grid item>
-                        <Typography align={matchesMD ? "center" : undefined} variant="h1">
+                        <Typography align={matchesMD ? "center" : undefined} variant="h1" style={{fontSize: "2.25em", lineHeight: matchesXS ? 1.1 : null, marginBottom: matchesXS ? "0.5em" : null}}>
                             iOS/Android App Development
                         </Typography>
                     </Grid>

@@ -98,8 +98,8 @@ export default function CustomSoftware(props) {
                 </Hidden>
                 <Grid item container direction="column" className={classes.heading}>
                     <Grid item>
-                        <Typography align={matchesMD ? "center" : undefined} variant="h1">
-                            Custom Software
+                        <Typography align={matchesMD ? "center" : undefined} variant="h1" style={{fontSize: "2.25em", lineHeight: matchesXS ? 1.1 : null, marginBottom: matchesXS ? "0.5em" : null}}>
+                            Custom Software Development
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -198,7 +198,7 @@ export default function CustomSoftware(props) {
                     </Grid>
                 </Grid> {/* End Digital Documents and Data*/}
                 <Grid item container className={classes.itemContainer} md direction={matchesSM ? "column" : "row"}> {/* Scale*/}
-                    <Grid item md>
+                    <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
                         <Lottie options={scaleOptions} style={{maxHeight: 260, maxWidth:280}} />
                     </Grid>
                     <Grid item container direction="column" md>
@@ -266,12 +266,12 @@ export default function CustomSoftware(props) {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Grid item md>
+                    <Grid item md style={{marginTop: matchesSM ? "2em" : null}}>
                         <Lottie options={automationOptions} style={{maxHeight: 290, maxWidth:280}} />
                     </Grid>
                 </Grid> {/* End Automation*/}
                 <Grid item container className={classes.itemContainer} md direction={matchesSM ? "column" : "row"}> {/* User Experience Design*/}
-                    <Grid item md>
+                    <Grid item md style={{marginBottom: matchesSM ? "2em" : null}}>
                         <Lottie options={uxOptions} style={{maxHeight: 310, maxWidth:155}} />
                     </Grid>
                     <Grid item container direction="column" md>

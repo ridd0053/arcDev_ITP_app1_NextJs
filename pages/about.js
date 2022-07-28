@@ -28,7 +28,11 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
           paddingLeft: "1.5em",
           paddingRight: "1.5em"
-        }
+        },
+        [theme.breakpoints.down("xs")]: {
+            paddingLeft: "1em",
+            paddingRight: "1em"
+          }
       },
       avatar: {
         width:"25em",
@@ -66,7 +70,7 @@ const useStyles = makeStyles(theme => ({
                 <Typography variant="h1" align={matchesMD ? "center" : undefined}>About Us</Typography>
             </Grid>
             {/* Mission Statement */}
-            <Grid item container justify="center" className={classes.rowContainer} style={{marginTop: "3em"}}>
+            <Grid item container justifyContent="center" className={classes.rowContainer} style={{marginTop: "3em"}}>
                 <Typography variant="h4" className={classes.missionStatement} align="center">
                     Whether it be person to person, business to consumer, or an individual to their interests, technology is meant to bring
                     us closer to what we care about in the best way possible. Arc Development will use that principle to provide fast,
@@ -74,7 +78,7 @@ const useStyles = makeStyles(theme => ({
                 </Typography>
             </Grid>
             {/* History*/}
-            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} className={classes.rowContainer} justify="space-around" style={{marginTop: "10em", marginBottom: "10em"}}>
+            <Grid item container direction={matchesMD ? "column" : "row"} alignItems={matchesMD ? "center" : undefined} className={classes.rowContainer} justifyContent="space-around" style={{marginTop: "10em", marginBottom: "10em"}}>
                 <Grid item>
                     <Grid item container direction="column" lg style={{maxWidth: "35em"}}>
                         <Grid item>
@@ -104,8 +108,8 @@ const useStyles = makeStyles(theme => ({
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item container justify={matchesMD ? "center" : undefined}>
-                    <Grid item container justify="center" lg alignItems={matchesMD ? "center" : undefined}>
+                <Grid item container justifyContent={matchesMD ? "center" : undefined}>
+                    <Grid item container justifyContent="center" lg alignItems={matchesMD ? "center" : undefined}>
                         <img src="/assets/history.svg" alt="quil pen sitting on top of book" style={{maxHeight: matchesMD ? 200 : "22em"}} />
                     </Grid>
                 </Grid>

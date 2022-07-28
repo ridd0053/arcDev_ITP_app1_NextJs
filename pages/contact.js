@@ -171,7 +171,7 @@ const useStyles = makeStyles(theme => ({
                 <meta property='og:url' content='itpArcCourseMatUdem.com/contact' key="og:url" />
                 <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/contact" />
             </Head>
-            <Grid item container direction="column" justify="center" alignItems="center" style={{marginBottom: matchesMD ? "5em" : 0, marginTop: matchesSM ?  "1em" : matchesMD ? "5em" : 0}} lg={4} xl={3}>
+            <Grid item container direction="column" justifyContent="center" alignItems="center" style={{marginBottom: matchesMD ? "5em" : 0, marginTop: matchesSM ?  "1em" : matchesMD ? "5em" : 0}} lg={4} xl={3}>
                 <Grid item>
                     <Grid container direction="column">
                         <Grid item>
@@ -217,7 +217,7 @@ const useStyles = makeStyles(theme => ({
                                 value={message} 
                                 id="message"
                                 multiline 
-                                rows={10}
+                                minRows={10}
                                 fullWidth
                                 className={classes.message}
                                 InputProps={{disableUnderline: true}}
@@ -225,7 +225,7 @@ const useStyles = makeStyles(theme => ({
                                 />
                             </Grid>
                         </Grid>
-                        <Grid item container justify="center" style={{marginTop: "2em"}}>
+                        <Grid item container justifyContent="center" style={{marginTop: "2em"}}>
                             <Button variant="contained" 
                             disabled={isDisabled}
                             className={classes.sendButton}
@@ -261,7 +261,7 @@ const useStyles = makeStyles(theme => ({
                                         value={message} 
                                         id="message"
                                         multiline 
-                                        rows={10}
+                                        minRows={10}
                                         fullWidth
                                         className={classes.message}
                                         InputProps={{disableUnderline: true}}
@@ -297,7 +297,7 @@ const useStyles = makeStyles(theme => ({
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item container direction={matchesMD ? "column": "row"} className={classes.background} lg={8} xl={9} alignItems="center" justify={matchesMD ? "center" : undefined}>
+            <Grid item container direction={matchesMD ? "column": "row"} className={classes.background} lg={8} xl={9} alignItems="center" justifyContent={matchesMD ? "center" : undefined}>
                 <Grid item style={{ marginLeft: matchesMD ? 0 : "3em", textAlign: matchesMD ? "center" : "inherit"}}>
                     <Grid container direction="column">
                         <Grid item>
@@ -307,7 +307,7 @@ const useStyles = makeStyles(theme => ({
                             <Typography variant="subtitle2" align={matchesMD ? "center" : undefined}  style={{ fontSize: "1.5rem" }} gutterBottom>
                                 Take advantage of the 21st Century.
                             </Typography>
-                            <Grid container item justify={matchesMD ? "center" : undefined}>
+                            <Grid container item justifyContent={matchesMD ? "center" : undefined}>
                                 <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution" onClick={() => {props.setTabindex(2);}}>
                                     <span style={{marginRight: 5}}> Learn More </span>
                                     <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>

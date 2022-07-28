@@ -62,16 +62,16 @@ export default function CallToAction(props) {
         container 
         alignItems="center" 
         className={classes.background} 
-        justify={matchesSM ? "center" : "space-between"}
+        justifyContent={matchesSM ? "center" : "space-between"}
         direction={matchesSM ? "column" : "row"}
         >
             <Grid item style={{ marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ? "center" : "inherit"}}>
                 <Grid container direction="column">
                     <Grid item>
-                        <Typography variant="h1" gutterBottom>
-                            Simple Software. <br /> Revolutionary Results.
+                        <Typography variant="h1" gutterBottom style={{lineHeight: matchesSM ? 1.1 : null}}>
+                            Simple Software. <br /> { matchesSM && <br />} Revolutionary Results.
                         </Typography>
-                        <Typography variant="subtitle2" style={{ fontSize: "1.5rem" }} gutterBottom>
+                        <Typography variant="subtitle2" style={{ fontSize: matchesSM ? "1.25rem" : "1.5rem" }} gutterBottom>
                             Take advantage of the 21st Century.
                         </Typography>
                         <Grid container item justifyContent={matchesSM ? "center" : undefined}>

@@ -17,6 +17,11 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import IconButton from "@material-ui/core/IconButton";
 import Hidden from "@material-ui/core/Hidden";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Popper from "@material-ui/core/Popper";
+import Paper from "@material-ui/core/Paper";
+import Grow from "@material-ui/core/Grow";
+import MenuList from "@material-ui/core/MenuList";
 
 // Adds shadow effect to the header when user scrolls the page
 function ElevationScroll(props) {
@@ -80,6 +85,7 @@ function ElevationScroll(props) {
         backgroundColor: theme.palette.common.blue,
         color: "white",
         borderRadius: 0,
+        zIndex: 1302,
     },
     menuItem: {
         ...theme.typography.tab,
@@ -153,6 +159,15 @@ export default function Header(props) {
         setOpen(false)
     }
 
+    function handleListKeyDown(event) {
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        setOpen(false);
+      } else if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    }
+
     const routes = useMemo(() => { 
         return [
         { name: "Home", link: "/", activeIndex: 0 },
@@ -171,24 +186,23 @@ export default function Header(props) {
 
     const menuOptions = useMemo(() => {
     return [
-        { name: "Services", link: "/services", activeIndex: 1, selectedIndex: 0 },
         {
           name: "Custom Software Development",
           link: "/customsoftware",
           activeIndex: 1,
-          selectedIndex: 1
+          selectedIndex: 0,
         },
         {
           name: "iOS/Android App Development",
           link: "/mobileapps",
           activeIndex: 1,
-          selectedIndex: 2
+          selectedIndex: 1,
         },
         {
           name: "Website Development",
           link: "/websites",
           activeIndex: 1,
-          selectedIndex: 3
+          selectedIndex: 2,
         }
     ]}, []);
 
@@ -231,11 +245,54 @@ export default function Header(props) {
                     aria-owns={route.ariaOwns}
                     aria-haspopup={route.ariaPopup}
                     onMouseOver={route.mouseOver}
+                    onMouseLeave={() => setOpen(false)}
                     />
                 ))}
             </Tabs>
             <Button variant="contained" color="secondary" className={classes.button} component={Link}  href="/estimate" onClick={() => props.setTabindex(routes.length + 1)}>Free Estimate</Button>
-            <Menu 
+            <Popper
+              open={open}
+              anchorEl={anchorEl}
+              role={undefined}
+              placement="bottom-start"
+              transition
+              disablePortal
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin: "top left"
+                  }}
+                >
+                  <Paper classes={{root: classes.menu}} elevation={0} >
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList
+                        onMouseLeave={handleClose}
+                        disablePadding
+                        autoFocusItem={false}
+                        id="simple-menu"
+                        aria-labelledby="composition-button"
+                        onKeyDown={handleListKeyDown}
+                        onMouseOver={() => setOpen(true)}
+                      >
+                        {menuOptions.map((option, i) => (
+                          <MenuItem
+                          key={i} 
+                          onClick={(event) => {handleMenuItemClick(event, i); handleClose(); props.setTabindex(1)}} 
+                          component={Link} 
+                          href={option.link} 
+                          classes={{root: classes.menuItem}} 
+                          selected={i === props.selectedIndex && props.tabIndex === 1 && window.location.pathname !== "/services"}>
+                          {option.name}</MenuItem>
+                        ))}
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
+            {/* <Menu 
              id="simple-menu"
              classes={{paper: classes.menu}} 
              anchorEl={anchorEl} 
@@ -246,17 +303,7 @@ export default function Header(props) {
              style={{zIndex:1302}}
              keepMounted
              >
-             {menuOptions.map((option, i) => (
-                <MenuItem
-                key={i} 
-                onClick={(event) => {handleMenuItemClick(event, i); handleClose(); props.setTabindex(1)}} 
-                component={Link} 
-                href={option.link} 
-                classes={{root: classes.menuItem}} 
-                selected={i === props.selectedIndex && props.tabIndex === 1}>
-                {option.name}</MenuItem>
-                ))}
-            </Menu> 
+            </Menu>  */}
         </React.Fragment>
       )
       const drawer = (

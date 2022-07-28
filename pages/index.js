@@ -76,6 +76,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             padding: 25,
         },
+        [theme.breakpoints.down('xs')]: {
+            padding: 5,
+        },
     },
     specialText: {
         fontFamily: "Pacifico",
@@ -142,12 +145,12 @@ export default function LandingPage(props) {
                 <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com" />
             </Head>
             <Grid item> {/* Hero block*/}
-                <Grid container justify="flex-end" alignItems="center" direction="row">
+                <Grid container justifyContent="flex-end" alignItems="center" direction="row">
                     <Grid sm item className={classes.heroTextContainer}>
                         <Typography variant="h1" align="center">
                             Bringing West Cost Technology <br /> to the Midwest
                         </Typography>
-                        <Grid container justify="center" className={classes.buttonContainer}>
+                        <Grid container justifyContent="center" className={classes.buttonContainer}>
                             <Grid item>
                                 <Button className={classes.estimateButton} variant="contained" component={Link}  href="/estimate" onClick={() => {props.setTabindex(5) }}>Free Estimate</Button>
                             </Grid>
@@ -165,7 +168,7 @@ export default function LandingPage(props) {
                 </Grid>
             </Grid> {/* End Hero block*/}
             <Grid item> {/* Services block  --- Custom software development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : undefined}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : undefined}>
                     <Grid item style={{marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ?  "center" : undefined}}>
                         <Typography variant="h4">
                             Custom Software Development
@@ -188,7 +191,7 @@ export default function LandingPage(props) {
                 </Grid>
             </Grid> {/* End Services block --- Custom software development*/}
             <Grid item> {/* Services block  --- iOS/Android App Development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : "flex-end"}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : "flex-end"}>
                     <Grid item style={{textAlign: matchesSM ?  "center" : undefined}}>
                         <Typography variant="h4">
                         iOS/Android App Development
@@ -212,7 +215,7 @@ export default function LandingPage(props) {
                 </Grid>
             </Grid> {/* End Services block --- iOS/Android App Development*/}
             <Grid item> {/* Services block  --- Website Development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : undefined}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : undefined}>
                     <Grid item style={{marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ?  "center" : undefined}}>
                         <Typography variant="h4">
                             Website Development
@@ -221,7 +224,7 @@ export default function LandingPage(props) {
                             Reach More. Discover More. Sell More.
                         </Typography>
                         <Typography variant="subtitle1">
-                            Optimized for Search Enignes, built for speed.
+                            Optimized for Search Enignes, {matchesXS && <br />}  built for speed.
                         </Typography>
                         <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites" onClick={() => {props.setTabindex(1); props.setSelectedIndex(3)}}>
                             <span style={{marginRight: 10}}> Learn More </span>
@@ -234,7 +237,7 @@ export default function LandingPage(props) {
                 </Grid>
             </Grid> {/* End Services block --- Website Development */}
             <Grid item> {/* Revolution block */}
-                <Grid container style={{height: "80em", marginTop: "12em"}} alignItems="center" justify="center">
+                <Grid container style={{height: "80em", marginTop: "12em"}} alignItems="center" justifyContent="center">
                     <Card className={classes.revolutionCard}>
                         <CardContent>
                             <Grid container direction="column">

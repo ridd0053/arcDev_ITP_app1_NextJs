@@ -786,7 +786,7 @@ export default function Estimate(props) {
                                 value={message} 
                                 id="message"
                                 multiline 
-                                rows={10}
+                                minRows={10}
                                 fullWidth
                                 className={classes.message}
                                 InputProps={{disableUnderline: true}}
