@@ -22,6 +22,11 @@ import Popper from "@material-ui/core/Popper";
 import Paper from "@material-ui/core/Paper";
 import Grow from "@material-ui/core/Grow";
 import MenuList from "@material-ui/core/MenuList";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Grid from "@material-ui/core/Grid";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 // Adds shadow effect to the header when user scrolls the page
 function ElevationScroll(props) {
@@ -127,11 +132,33 @@ function ElevationScroll(props) {
       },
       appbar: {
         zIndex: theme.zIndex.modal + 1,
-      }
+      },
+      expansion: {
+        backgroundColor: theme.palette.common.blue,
+        borderBottom: props => props.tabIndex === 1 ? ` 2px solid ${theme.palette.common.orange}` : "1px solid rgba(0, 0, 0, 0.12)",
+        "&.Mui-expanded": {
+          margin: 0,
+          borderBottom: 0,
+        },
+        "&::before": {
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        },
+      },
+      expansionDetails: {
+        padding: 0,
+        backgroundColor: theme.palette.primary.light,
+      },
+      expansionSummary: {
+        padding: "0 24px 0 16px",
+        backgroundColor: props => props.tabIndex === 1 ? "rgba(0, 0, 0, 0.14)" : "inherit",
+        "&:hover": {
+          backgroundColor: "rgba(0, 0, 0, 0.08)",
+        },
+      },
   }))
 
 export default function Header(props) {
-    const classes = useStyles();
+    const classes = useStyles(props);
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -317,7 +344,46 @@ export default function Header(props) {
           >
             <div className={classes.toolbarMargin}></div>
             <List disablePadding>
-                {routes.map( route => (
+                {routes.map( route =>
+                route.name === "Services" ? 
+                (
+                  <ExpansionPanel key={route.name} elevation={0} classes={{root: classes.expansion}}>
+                    <ExpansionPanelSummary classes={{root: classes.expansionSummary}} expandIcon={<ExpandMoreIcon color="secondary" />}>
+                        <ListItemText classes={{root: classes.drawerItem}} style={{opacity: props.tabIndex === 1 ? 1 : null}} disableTypography onClick={() => {setOpenDrawer(false); props.setTabindex(route.activeIndex)}}>
+                          <Link color="inherit" href={route.link}> {route.name} </Link>
+                        </ListItemText>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails classes={{root: classes.expansionDetails}}>
+                        <Grid container direction="column">
+                          {menuOptions.map(subroute => (
+                            <Grid item key={subroute.name}>
+                              <ListItem 
+                                key={subroute.link}
+                                onClick={() => {setOpenDrawer(false); props.setSelectedIndex(subroute.selectedIndex)}} 
+                                divider
+                                button
+                                component={Link} 
+                                href={subroute.link}
+                                selected={props.selectedIndex === subroute.selectedIndex && props.tabIndex === 1 && window.location.pathname !== "/services" }
+                                classes={{selected: classes.drawerItemSelected}}
+                                >
+                                    <ListItemText classes={{root: classes.drawerItem}} disableTypography>
+                                        {subroute.name.split(" ").filter(word => word !== "Development").join(" ")}
+                                        <br />
+                                        <span style={{fontSize: "0.7rem"}}>
+                                          Development
+                                        </span>
+                                    </ListItemText>
+                                </ListItem>
+         
+                            </Grid>
+                          ))}
+                        </Grid>
+                    </ExpansionPanelDetails>
+                  </ExpansionPanel>
+                ) 
+                : 
+                (
                     <ListItem 
                     key={route.link}
                     onClick={() => {setOpenDrawer(false); props.setTabindex(route.activeIndex)}} 
