@@ -104,23 +104,16 @@ export default function CustomSoftware(props) {
                     </Grid>
                     <Grid item>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            Whether we're replacing old software or inventing new solutions, Arc Development
-                            is here to help your business tackle technology. 
+                            Sed quis dui condimentum risus volutpat rhoncus. Curabitur finibus nunc vel tempor mollis.
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            Using regular commercial software leaves you with a lot of stuff you don't need,
-                            without some of the stuff you do need, and ultimately controls the way you work.
-                            Without using any software at all you risk falling behind competitors and missing
-                            out on huge savings from increased efficiency. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pellentesque elit sit amet pulvinar accumsan. Vestibulum nec fringilla libero. Maecenas porttitor velit in risus molestie, vel sollicitudin mi consectetur. Maecenas eleifend congue viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi turpis neque, imperdiet nec pellentesque ut, lacinia pellentesque urna. Pellentesque eu maximus ligula, nec placerat orci. Etiam pulvinar pretium lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ac ipsum quis ligula sagittis ornare.
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            Our custom solutions are designed from the ground up with your needs, wants,
-                            and goals at the core. This collaborative process produces finely tuned software
-                            that is much more effective at improving your workflow and reducing costs than
-                            generalized options.
+                            Nam euismod, lacus condimentum iaculis egestas, odio felis sodales magna, at sagittis lectus libero at dolor. Etiam a bibendum lorem. Duis nisl nulla, tincidunt sed libero eu, cursus consectetur diam. Proin non congue dolor. Curabitur ac lobortis nisi. Donec facilisis libero sapien, et porttitor nisl ultrices sed.
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            We create exactly what you what, exactly how you want it
+                            Pellentesque eget orci mauris.
                         </Typography>
                     </Grid>
                 </Grid>
@@ -136,7 +129,7 @@ export default function CustomSoftware(props) {
                 <Grid item container direction="column" md style={{maxWdith: "40em"}} alignItems="center">
                     <Grid item>
                         <Typography variant="h4" gutterBottom>
-                            Save Engergy
+                            Lorem sit
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -146,7 +139,7 @@ export default function CustomSoftware(props) {
                 <Grid item container direction="column" md style={{maxWdith: "40em", marginTop: matchesSM ? "10em" : 0, marginBottom: matchesSM ? "10em" : 0}} alignItems="center">
                     <Grid item>
                         <Typography variant="h4" gutterBottom>
-                            Save Money
+                            Lorem dolar
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -156,7 +149,7 @@ export default function CustomSoftware(props) {
                 <Grid item container direction="column" md style={{maxWdith: "40em"}} alignItems="center">
                     <Grid item>
                         <Typography variant="h4" gutterBottom>
-                            Save Time
+                            Lorem ipsum
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -174,22 +167,14 @@ export default function CustomSoftware(props) {
                         </Grid>
                         <Grid item>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                Reduce Errors. Reduce Waste.
-                                Reduce Costs.
+                                Lorem ipsum. Lorem sit.
+                                Lorem dolor.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                Billions are spent annually on the
-                                purchasing, printing, and distribution
-                                of paper. On top of the massive
-                                environmental impact this has, it
-                                causes harm to your bottom line as
-                                well. 
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pellentesque elit sit amet pulvinar accumsan. Vestibulum nec fringilla libero. Maecenas porttitor velit in risus molestie, vel sollicitudin mi consectetur. Maecenas eleifend congue viverra.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                By utilizing digital forms and
-                                documents you can remove these
-                                obsolete expenses, accelerate your
-                                communication, and help the Earth. 
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi turpis neque, imperdiet nec pellentesque ut, lacinia pellentesque urna. Pellentesque eu maximus ligula, nec placerat orci.
                             </Typography>
                         </Grid>
                     </Grid>
@@ -209,10 +194,7 @@ export default function CustomSoftware(props) {
                         </Grid>
                         <Grid item>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : "right"}>
-                                Whether you're a large brand, just getting started,
-                                or taking off right now, our application
-                                architecture ensures pain-free growth and
-                                reliability.
+                                Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem. Donec in mi a nunc dictum hendrerit eu eget nulla. Duis ultricies ac odio non pharetra. Phasellus consectetur gravida mauris eget faucibus.
                             </Typography>
                         </Grid>
                     </Grid>
@@ -228,16 +210,10 @@ export default function CustomSoftware(props) {
                             Root-Cause Analysis
                         </Typography>
                         <Typography variant="body1" paragraph align="center">
-                            Many problems are merely
-                            symptoms of larger, underlying
-                            issues
+                            Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem.
                         </Typography>
                         <Typography variant="body1" paragraph align="center">
-                            We can help you thoroughly
-                            examine all areas of your business
-                            to develop a holistic plan for the
-                            most effective implementation of
-                            technology.
+                            Integer ullamcorper lacus purus, eu sollicitudin augue tincidunt vitae. Vivamus blandit semper nibh at auctor. Cras blandit, sem ut eleifend rutrum, velit mi pellentesque purus, molestie mattis dui dui sit amet sem. Pellentesque sit amet bibendum elit. Nam sit amet eleifend mauris. Nullam ac facilisis mi. Proin fermentum fringilla lectus, sit amet tempor felis egestas ac.
                         </Typography>
                     </Grid>
                 </Grid>
@@ -252,17 +228,13 @@ export default function CustomSoftware(props) {
                         </Grid>
                         <Grid item>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                Why waste time when you don't have to? 
+                            Suspendisse malesuada ligula nisl, sit amet consequat nulla feugiat ac?
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                We can help you identify processes with
-                                time or event based actions which can now
-                                easily be automated. 
+                                Nunc ac enim metus. Nam vehicula ligula in dui congue, at mollis urna finibus. Donec vulputate, erat a ultricies hendrerit, diam elit rutrum libero, ac eleifend sapien elit et tortor.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                                Increasing efficiency increases profits,
-                                leaving you more time to focus on your
-                                business, not busywork.
+                                Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem.
                             </Typography>
                         </Grid>
                     </Grid>
@@ -282,19 +254,13 @@ export default function CustomSoftware(props) {
                         </Grid>
                         <Grid item>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : "right"}>
-                                A good design that isn't usable
-                                isn't a good design. 
+                                Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : "right"}>
-                                So why are so many pieces of software complicated, confusing,
-                                and frustrating?  
+                                Integer ullamcorper lacus purus, eu sollicitudin augue tincidunt vitae. Vivamus blandit semper nibh at auctor. Cras blandit, sem ut eleifend rutrum, velit mi pellentesque purus, molestie mattis dui dui sit amet sem. Pellentesque sit amet bibendum elit.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesSM ? "center" : "right"}>
-                                By prioritizing users and the real ways they interact with
-                                technology we're able to develop
-                                unique, personable experiences
-                                that solve problems rather than
-                                create new ones.
+                                Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem.
                             </Typography>
                         </Grid>
                     </Grid>

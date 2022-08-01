@@ -76,10 +76,7 @@ export default function MobileApps(props) {
                             Mobile apps allow you to take your tools on the go. 
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            Whether you want an app for your customers, employees, or yourself, we can
-                            build cross-platform native solutions for any part of your business process. This
-                            opens you up to a whole new world of possibilities by taking advantage of phone
-                            features like the camera, GPS, push notifications, and more
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pellentesque elit sit amet pulvinar accumsan. Vestibulum nec fringilla libero. Maecenas porttitor velit in risus molestie, vel sollicitudin mi consectetur. Maecenas eleifend congue viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi turpis neque, imperdiet nec pellentesque ut, lacinia pellentesque urna. Pellentesque eu maximus ligula, nec placerat orci. Etiam pulvinar pretium lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam ac ipsum quis ligula sagittis ornare. Nam euismod, lacus condimentum iaculis egestas, odio felis sodales magna, at sagittis lectus libero at dolor. Etiam a bibendum lorem. Duis nisl nulla, tincidunt sed libero eu, cursus consectetur diam. Proin non congue dolor. Curabitur ac lobortis nisi. Donec facilisis libero sapien, et porttitor nisl ultrices sed.
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
                             Convenience. Connection.

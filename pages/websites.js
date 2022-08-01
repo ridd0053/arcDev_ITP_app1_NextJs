@@ -62,14 +62,10 @@ export default function Websites(props) {
                     </Grid>
                     <Grid item>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            Having a website is a necessity in today's business world. They give you one
-                            central, public location to let people know who you are, what you do, and why
-                            you're the best at it. 
+                            Sed quis dui condimentum risus volutpat rhoncus. Curabitur finibus nunc vel tempor mollis. Etiam a finibus lorem. Nam dignissim ultrices ex, sed consequat dui. Nunc ultrices eleifend orci, sit amet scelerisque quam egestas ac. Cras quam nunc, bibendum sit amet pretium ac, feugiat ut velit. Nunc sed turpis eleifend, rutrum nisi ac, imperdiet libero. Ut et dictum mauris. Donec consequat pellentesque neque, eget tristique velit accumsan ut. Morbi a ligula nec enim malesuada fermentum. Aliquam volutpat tempus massa, sed maximus ligula pretium ac.
                         </Typography>
                         <Typography align={matchesMD ? "center" : undefined} variant="body1" paragraph>
-                            From simply having your hours posted to having a full fledged online store,
-                            making yourself as accessible as possible to users online drives growth and
-                            enables you to reach new customers. 
+                            Pellentesque eget orci mauris. Nunc ac enim metus. Nam vehicula ligula in dui congue, at mollis urna finibus. Donec vulputate, erat a ultricies hendrerit, diam elit rutrum libero, ac eleifend sapien elit et tortor. Suspendisse malesuada ligula nisl, sit amet consequat nulla feugiat ac. Aliquam vel felis neque. Sed a pretium tortor, quis lobortis nunc. 
                         </Typography>
                     </Grid>
                 </Grid>
@@ -96,11 +92,7 @@ export default function Websites(props) {
                 </Grid>
                 <Grid item className={classes.paragraphContainer}>
                     <Typography align={matchesSM ? "center" : undefined} variant="body1" paragraph>
-                        Knowledge is power, and data is 21st Century
-                        gold. Analyzing this data can reveal hidden
-                        patterns and trends in your business,
-                        empowering you to make smarter decisions
-                        with measurable effects.
+                        Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem. Donec in mi a nunc dictum hendrerit eu eget nulla. Duis ultricies ac odio non pharetra. Phasellus consectetur gravida mauris eget faucibus.
                     </Typography>
                 </Grid>
             </Grid> {/* End Analytics */}
@@ -119,11 +111,10 @@ export default function Websites(props) {
                 </Grid>
                 <Grid item style={{marginLeft: matchesSM ? 0 : "1em"}} className={classes.paragraphContainer}>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                            It's no secret that people like to shop online.
+                        Nunc sed turpis eleifend, rutrum nisi ac, imperdiet libero
                     </Typography>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                            In 2017 over $2.3 trillion was spent in e-commerce, and
-                            it's time for your slice of that pie.
+                        Ut et dictum mauris. Donec consequat pellentesque neque, eget tristique velit accumsan ut
                     </Typography>
                 </Grid>
             </Grid> {/* End E-Commerce */}
@@ -142,10 +133,7 @@ export default function Websites(props) {
                 </Grid>
                 <Grid item style={{marginLeft: matchesSM ? 0 : "1em"}} className={classes.paragraphContainer}>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                        Draw people in with a dazzling website.
-                        Showing off your products online is a great
-                        way to help customers decide what's right for
-                        them before visiting in person.
+                        Cras dapibus gravida ligula, in auctor tortor bibendum et. Quisque sed diam lorem. Nulla eget lorem eu augue lobortis volutpat. Quisque vel gravida sem, et porta enim. Praesent dui turpis, volutpat id egestas sit amet, porttitor a lorem. Donec in mi a nunc dictum hendrerit eu eget nulla. Duis ultricies ac odio non pharetra. Phasellus consectetur gravida mauris eget faucibus.
                     </Typography>
                 </Grid>
             </Grid> {/* End Outreach */}
@@ -164,13 +152,13 @@ export default function Websites(props) {
                 </Grid>
                 <Grid item style={{marginLeft: matchesSM ? 0 : "1em"}} className={classes.paragraphContainer}>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                        How often have you ever been to the second page of Google results?
+                        Integer ullamcorper lacus purus, eu sollicitudin augue tincidunt vitae?
                     </Typography>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                        If you're like us, probably never. 
+                        ivamus blandit semper nibh at auctor. 
                     </Typography>
                     <Typography variant="body1" paragraph align={matchesSM ? "center" : undefined}>
-                        Customers don't go there either, so we make sure your website is
+                        Cras blandit, sem ut eleifend rutrum, velit mi pellentesque purus
                     </Typography>
                 </Grid>
             </Grid> {/* End Search Engine Optimization */}

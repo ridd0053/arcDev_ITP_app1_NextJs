@@ -72,9 +72,7 @@ const useStyles = makeStyles(theme => ({
             {/* Mission Statement */}
             <Grid item container justifyContent="center" className={classes.rowContainer} style={{marginTop: "3em"}}>
                 <Typography variant="h4" className={classes.missionStatement} align="center">
-                    Whether it be person to person, business to consumer, or an individual to their interests, technology is meant to bring
-                    us closer to what we care about in the best way possible. Arc Development will use that principle to provide fast,
-                    modern, inexpensive, and aesthetic software to the Midwest and beyond
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat tellus, porttitor eget maximus quis, elementum vitae dui. Nulla libero leo, venenatis quis leo id, molestie pretium turpis. Vivamus sodales elementum consectetur. Nulla aliquet pellentesque ultricies. Nulla pulvinar dignissim dui facilisis lacinia.
                 </Typography>
             </Grid>
             {/* History*/}
@@ -88,22 +86,16 @@ const useStyles = makeStyles(theme => ({
                         </Grid>
                         <Grid item>
                             <Typography variant="body1" paragraph style={{fontWeight: 700, fontStyle: "italic"}} align={matchesMD ? "center" : undefined}>
-                                We're the new kid on the block.    
+                                Cras eget tellus nec nibh pretium posuere.   
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesMD ? "center" : undefined}>
-                                Founded in 2019, we're ready to get our hands on the world's business problems. 
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesMD ? "center" : undefined}>
-                                It all started with one question: Why aren't all businesses using available technology?
-                                There are many different answers to that question: economic barriers, social barriers,
-                                educational barriers, and sometimes institutional barriers. 
+                                Fusce vestibulum faucibus diam quis viverra. Curabitur at commodo risus. Sed volutpat, lectus non condimentum venenatis, mi odio maximus justo, et consequat felis turpis nec nisl. Maecenas tempus quis justo porta rhoncus. Aenean rhoncus convallis leo nec mollis. 
                             </Typography>
                             <Typography variant="body1" paragraph align={matchesMD ? "center" : undefined}>
-                                We aim to be a powerful force in overcoming these obstacles. Recent developments in
-                                software engineering and computing power, compounded by the proliferation of smart phones,
-                                has opened up infinite worlds of possibility. Things that have always been done by hand can
-                                now be done digitally and automatically, and completely new methods of interaction are
-                                created daily. Taking full advantage of these advancements is the name of the game. 
+                                Donec eu arcu nibh. Nullam dictum cursus urna, in laoreet orci. Curabitur blandit tellus et est semper, ut ultrices tortor lacinia. Praesent id magna egestas, lacinia nunc non, condimentum dui. Aliquam imperdiet ante sed turpis dictum, ac gravida dui condimentum.
                             </Typography>
                         </Grid>
                     </Grid>

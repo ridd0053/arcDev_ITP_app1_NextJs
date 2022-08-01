@@ -8,6 +8,7 @@ import Footer from "../src/ui/Footer";
 import Fonts from '../src/ui/Font';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 

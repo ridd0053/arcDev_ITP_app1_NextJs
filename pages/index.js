@@ -177,11 +177,11 @@ export default function LandingPage(props) {
                             Custom Software Development
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitle}>
-                            Save Energy. Save Time. Save Money.
+                            Lorem ipsum. Lorem Sit. Lorem consectetur.
                         </Typography>
                         <Typography variant="subtitle1">
-                            Complete digital solution, from investigation to {" "} 
-                            <span className={classes.specialText}>celebration.</span>
+                        Orci varius natoque penatibus et magnis dis parturient {" "} 
+                        <span className={classes.specialText}>ullamcorper.</span>
                         </Typography>
                         <Button variant="outlined" className={classes.learnButton} component={Link}  href="/customsoftware" >
                             <span style={{marginRight: 10}}> Learn More </span>
@@ -200,12 +200,12 @@ export default function LandingPage(props) {
                         iOS/Android App Development
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitle}>
-                            Extend Functionality. Extend Access, Increase Engagement.
+                        Lorem ipsum. Lorem Sit. Lorem consectetur.
                         </Typography>
                         <Typography variant="subtitle1">
-                            Integrate your web experience or create a standalone app
+                        Donec finibus nisl sed augue pharetra convallis
                             {matchesSM ? null : <br />} 
-                            with either mobile platform.
+                            eget tellus nec nibh pretium posuere.
                         </Typography>
                         <Button variant="outlined" className={classes.learnButton} component={Link}  href="/mobileapps">
                             <span style={{marginRight: 10}}> Learn More </span>
@@ -224,10 +224,10 @@ export default function LandingPage(props) {
                             Website Development
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitle}>
-                            Reach More. Discover More. Sell More.
+                        Lorem ipsum. Lorem Sit. Lorem consectetur.
                         </Typography>
                         <Typography variant="subtitle1">
-                            Optimized for Search Enignes, {matchesXS && <br />}  built for speed.
+                        Donec interdum ipsum sem, {matchesXS && <br />}  eu vehicula turpis.
                         </Typography>
                         <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites">
                             <span style={{marginRight: 10}}> Learn More </span>
@@ -251,7 +251,7 @@ export default function LandingPage(props) {
                                 </Grid>
                                 <Grid item style={{textAlign: "center"}}>
                                     <Typography variant="subtitle1" gutterBottom>
-                                        Visionary insights coupled with cutting-edge technology is a recipe for revolution.
+                                    Vestibulum erat tellus, porttitor eget maximus quis, elementum vitae dui.
                                     </Typography>
                                     <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution">
                                         <span style={{marginRight: 10}}> Learn More </span>

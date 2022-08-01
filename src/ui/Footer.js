@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
     },
     mainContainer: {
         position: "absolute",
-        marginLeft: "1.5rem"
     },
     link: {
         color: "white",

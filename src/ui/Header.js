@@ -27,6 +27,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails  from "@material-ui/core/AccordionDetails";
 import Grid from "@material-ui/core/Grid";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Typography } from "@material-ui/core";
 
 // Adds shadow effect to the header when user scrolls the page
 function ElevationScroll(props) {
@@ -44,12 +45,12 @@ function ElevationScroll(props) {
   const useStyles = makeStyles(theme => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: "3em",
+        marginBottom: "9em",
         [theme.breakpoints.down('md')]: {
-            marginBottom: "2em",
+            marginBottom: "9em",
         },
         [theme.breakpoints.down('xs')]: {
-            marginBottom: "1.25em",
+            marginBottom: "9em",
         },
     },
     logo: {
@@ -155,6 +156,12 @@ function ElevationScroll(props) {
           backgroundColor: "rgba(0, 0, 0, 0.08)",
         },
       },
+      message: {
+        paddingTop: "1em",
+        paddingBottom: "1.5em",
+        backgroundColor: theme.palette.error.main,
+
+      }
   }))
 
 export default function Header(props) {
@@ -208,7 +215,8 @@ export default function Header(props) {
         },
         { name: "The Revolution", link: "/revolution", activeIndex: 2 },
         { name: "About Us", link: "/about", activeIndex: 3 },
-        { name: "Contact Us", link: "/contact", activeIndex: 4 }
+        { name: "Contact Us", link: "/contact", activeIndex: 4 },
+        { name: "Project 2", link: "/projectmanager", activeIndex: 5 },
       ]}, [anchorEl]);
 
     const menuOptions = useMemo(() => {
@@ -421,6 +429,14 @@ export default function Header(props) {
         <React.Fragment>
         <ElevationScroll>
             <AppBar position="fixed" className={classes.appbar}>
+            <Grid container direction="column" justifyContent="center" classes={{root: classes.message}}>
+                    <Grid item >
+                      <Typography variant="body1" style={{color: "#fff", fontSize: "1rem"}} align="center">
+                        This site was created expressly for learning purposes, so don't take the content seriously. 
+                        <br/> Please do not use the contact form and please do not place an estimate request, I will not respond to this.
+                        </Typography>
+                    </Grid>
+                  </Grid>
                 <Toolbar disableGutters>
                     <Button component={Link} href="/" className={classes.logoContainer} disableRipple>
                     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 139" className={classes.logo}>

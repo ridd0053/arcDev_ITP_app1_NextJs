@@ -114,6 +114,11 @@ export default createTheme({
                 }
             }
         },
+        MuiDialog: {
+            root: {
+              zIndex: "1302 !important",
+            },
+        },
 
       }
 })
