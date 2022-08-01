@@ -308,7 +308,7 @@ const useStyles = makeStyles(theme => ({
                                 Take advantage of the 21st Century.
                             </Typography>
                             <Grid container item justifyContent={matchesMD ? "center" : undefined}>
-                                <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution" onClick={() => {props.setTabindex(2);}}>
+                                <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution">
                                     <span style={{marginRight: 5}}> Learn More </span>
                                     <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                                 </Button>
@@ -317,7 +317,7 @@ const useStyles = makeStyles(theme => ({
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Button variant="contained" className={classes.estimateButton} component={Link}  href="/estimate" onClick={() => {props.setTabindex(5);}}>
+                    <Button variant="contained" className={classes.estimateButton} component={Link}  href="/estimate">
                         Free Estimate
                     </Button>
                 </Grid>

@@ -5,6 +5,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import Theme from '../src/ui/Theme';
 import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
+import Fonts from '../src/ui/Font';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -14,6 +16,7 @@ export default function MyApp(props) {
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
+    Fonts();
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -28,8 +31,10 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={Theme}>
         <Header tabIndex={value} setTabindex={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
-        <Component {...pageProps} setTabindex={setValue} setSelectedIndex={setSelectedIndex}  />
-        <Footer {...pageProps} setTabindex={setValue} setSelectedIndex={setSelectedIndex} />
+        <Component  />
+        <LazyLoadComponent threshold={400}>
+          <Footer />
+        </LazyLoadComponent>
       </ThemeProvider>
     </React.Fragment>
   );

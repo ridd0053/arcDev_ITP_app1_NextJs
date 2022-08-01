@@ -63,7 +63,7 @@ export default function Services(props) {
                 </Typography>
             </Grid>
             <Grid item> {/* Services block  --- iOS/Android App Development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : "flex-end"} style={{marginTop: matchesSM ? "1em" : "5em"}}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : "flex-end"} style={{marginTop: matchesSM ? "1em" : "5em"}}>
                     <Grid item style={{textAlign: matchesSM ?  "center" : undefined}}>
                         <Typography variant="h4">
                         iOS/Android App Development
@@ -76,7 +76,7 @@ export default function Services(props) {
                             {matchesSM ? null : <br />} 
                             with either mobile platform.
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/mobileapps" onClick={() => {props.setTabindex(1); props.setSelectedIndex(2)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/mobileapps">
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>
@@ -87,7 +87,7 @@ export default function Services(props) {
                 </Grid>
             </Grid> {/* End Services block --- iOS/Android App Development*/}
             <Grid item> {/* Services block  --- Custom software development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : undefined}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : undefined}>
                     <Grid item style={{marginLeft: matchesSM ? 0 : "5em", textAlign: matchesSM ?  "center" : undefined}}>
                         <Typography variant="h4">
                             Custom Software Development
@@ -99,7 +99,7 @@ export default function Services(props) {
                             Complete digital solution, from investigation to {" "} 
                             <span className={classes.specialText}>celebration.</span>
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/customsoftware" onClick={() => {props.setTabindex(1); props.setSelectedIndex(1)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/customsoftware">
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>
@@ -110,7 +110,7 @@ export default function Services(props) {
                 </Grid>
             </Grid> {/* End Services block --- Custom software development*/}
             <Grid item> {/* Services block  --- Website Development */}
-                <Grid container direction="row" className={classes.serviceContainer} justify={matchesSM ? "center" : "flex-end"} style={{marginBottom: "10em"}}>
+                <Grid container direction="row" className={classes.serviceContainer} justifyContent={matchesSM ? "center" : "flex-end"} style={{marginBottom: "10em"}}>
                     <Grid item style={{textAlign: matchesSM ?  "center" : undefined, width: matchesSM ? undefined : "35em"}}>
                         <Typography variant="h4">
                             Website Development
@@ -121,7 +121,7 @@ export default function Services(props) {
                         <Typography variant="subtitle1">
                             Optimized for Search Enignes, {matchesXS && <br />}  built for speed.
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites" onClick={() => {props.setTabindex(1); props.setSelectedIndex(3)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites">
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>

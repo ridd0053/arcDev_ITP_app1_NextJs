@@ -46,10 +46,10 @@ export default function Websites(props) {
             <meta property='og:url' content='itpArcCourseMatUdem.com/websites' key="og:url" />
             <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/websites" />
         </Head>
-        <Grid item container direction="row" justify={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
+        <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
-                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/mobileapps" onClick={() => {props.setTabindex(1); props.setSelectedIndex(2)}}>
+                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/mobileapps">
                             <img src="/assets/backArrow.svg" alt="Back to Custom iOS/Android App Development  Page" />
                         </IconButton>
                     </Grid>
@@ -75,7 +75,7 @@ export default function Websites(props) {
                 </Grid>
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer}>
-                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/services" onClick={() => {props.setTabindex(1); props.setSelectedIndex(0)}}>
+                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/services">
                             <img src="/assets/forwardArrow.svg" alt="Forward to Services Page" />
                         </IconButton>
                     </Grid>
@@ -104,7 +104,7 @@ export default function Websites(props) {
                     </Typography>
                 </Grid>
             </Grid> {/* End Analytics */}
-            <Grid item container direction={matchesSM ? "column" : "row"} alignItems="center" className={classes.rowContainer} justify="flex-end" style={{marginTop: "15em", marginBottom: "15em"}}> {/* E-Commerce */}
+            <Grid item container direction={matchesSM ? "column" : "row"} alignItems="center" className={classes.rowContainer} justifyContent="flex-end" style={{marginTop: "15em", marginBottom: "15em"}}> {/* E-Commerce */}
                 <Grid item>
                     <Grid container direction="column">
                         <Grid item>
@@ -149,7 +149,7 @@ export default function Websites(props) {
                     </Typography>
                 </Grid>
             </Grid> {/* End Outreach */}
-            <Grid item container direction={matchesSM ? "column" : "row"} alignItems="center" className={classes.rowContainer} justify="flex-end" style={{marginTop: "15em", marginBottom: "15em"}}> {/* Search Engine Optimization */}
+            <Grid item container direction={matchesSM ? "column" : "row"} alignItems="center" className={classes.rowContainer} justifyContent="flex-end" style={{marginTop: "15em", marginBottom: "15em"}}> {/* Search Engine Optimization */}
                 <Grid item>
                     <Grid container direction="column">
                         <Grid item>
@@ -175,7 +175,7 @@ export default function Websites(props) {
                 </Grid>
             </Grid> {/* End Search Engine Optimization */}
             <Grid item>
-                <CallToAction setTabindex={props.setTabindex} />
+                <CallToAction/>
             </Grid>
      </Grid>
   );

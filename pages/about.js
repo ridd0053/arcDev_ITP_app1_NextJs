@@ -173,7 +173,7 @@ const useStyles = makeStyles(theme => ({
             </Grid>
             {/* Call To Action*/}
             <Grid item>
-                <CallToAction setTabindex={props.setTabindex} />
+                <CallToAction />
             </Grid>
         </Grid>
     )

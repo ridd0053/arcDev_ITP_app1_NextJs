@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Head from "next/head";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 
 import technologyAnimation from "../src/animations/technologyAnimation/data.json";
@@ -168,7 +169,7 @@ export default function Revolution(props) {
             {/* Vision */}
             <Grid item container direction={matchesMD ? "column" : "row"} alignItems="center" className={classes.rowContainer} style={{ marginTop: "5em" }}>
                 <Grid item lg>
-                    <img src="/assets/vision.svg" alt="mountain through binoculars" style={{maxWidth: matchesSM ? 300 : "40em", marginRight: matchesMD ? 0 : "5em", marginBottom: matchesMD ? "5em" : 0}} />
+                    <LazyLoadImage src="/assets/vision.svg" alt="mountain through binoculars" style={{maxWidth: matchesSM ? 300 : "40em", marginRight: matchesMD ? 0 : "5em", marginBottom: matchesMD ? "5em" : 0}} />
                 </Grid>
                 <Grid item container direction="column" lg style={{maxWidth: "40em"}}>
                     <Grid item>
@@ -268,8 +269,8 @@ export default function Revolution(props) {
                 </Grid>
             </Grid>
             {/* Sections */}
-            {sections.map( section  => (
-            <Grid item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: section.backgroundColor, height: "90em" }}>
+            {sections.map( (section, index)  => (
+            <Grid key={index} item container direction={matchesMD ? "column" : "row"} justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{ backgroundColor: section.backgroundColor, height: "90em" }}>
                 <Grid item container direction="column" alignItems={matchesMD ? "center" : undefined} lg>
                     <Grid item>
                         <Typography variant="h4" gutterBottom style={{ color: "#000", marginTop: matchesMD ? 0 : "5em" }} align={matchesMD ? "center" : undefined}>
@@ -284,13 +285,13 @@ export default function Revolution(props) {
                     </Grid>
                 </Grid>
                 <Grid item lg style={{alignSelf: "center"}}>
-                    <img src={section.icon} alt={section.iconAlt} style={{ maxWidth: section.iconMaxWidth }} width="100%" />
+                    <LazyLoadImage threshold={400} src={section.icon} alt={section.iconAlt} style={{ maxWidth: section.iconMaxWidth }} width="100%" />
                 </Grid>
             </Grid>))}
             {/* End of Sections */}
             {/* Call To Action */}
             <Grid item>
-                <CallToAction setTabindex={props.setTabindex} />
+                <CallToAction  />
             </Grid>
         </Grid>
     )

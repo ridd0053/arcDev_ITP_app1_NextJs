@@ -22,9 +22,9 @@ import Popper from "@material-ui/core/Popper";
 import Paper from "@material-ui/core/Paper";
 import Grow from "@material-ui/core/Grow";
 import MenuList from "@material-ui/core/MenuList";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails  from "@material-ui/core/AccordionDetails";
 import Grid from "@material-ui/core/Grid";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -233,31 +233,26 @@ export default function Header(props) {
         }
     ]}, []);
 
-    useEffect(() => {
-        [...menuOptions, ...routes].forEach(route => {
-            switch (window.location.pathname) {
-              case `${route.link}`:
-                if (props.tabIndex !== route.activeIndex) {
-                  props.setTabindex(route.activeIndex);
-                  if (
-                    route.selectedIndex &&
-                    route.selectedIndex !== props.selectedIndex
-                  ) {
-                    props.setSelectedIndex(route.selectedIndex);
-                  }
-                }
-                break;
-              case "/estimate":
-                if(props.tabIndex !== 5) {
-                  props.setTabindex(5);
-                }
-                break;
-              default:
-                break;
-            }
-          });
+      const path = typeof window !== "undefined" ? window.location.pathname : null;
 
-      }, [props.tabIndex, props.selectedIndex, routes, menuOptions, props ])
+      const activeIndex = () => {
+        const found = routes.find(({ link }) => link === path)
+        const menuFound = menuOptions.find(({ link }) => link === path)
+        if ( menuFound ) {
+          props.setTabindex(1)
+          props.setSelectedIndex(menuFound.selectedIndex)
+        }
+        else if(found === undefined) {
+          props.setTabindex(false)
+        }
+        else {
+          props.setTabindex(found.activeIndex)
+        }
+      }
+
+      useEffect(() => {
+        activeIndex();
+      }, [path])
 
       const tabs = (
         <React.Fragment>
@@ -276,7 +271,7 @@ export default function Header(props) {
                     />
                 ))}
             </Tabs>
-            <Button variant="contained" color="secondary" className={classes.button} component={Link}  href="/estimate" onClick={() => props.setTabindex(routes.length + 1)}>Free Estimate</Button>
+            <Button variant="contained" color="secondary" className={classes.button} component={Link}  href="/estimate">Free Estimate</Button>
             <Popper
               open={open}
               anchorEl={anchorEl}
@@ -306,7 +301,7 @@ export default function Header(props) {
                         {menuOptions.map((option, i) => (
                           <MenuItem
                           key={i} 
-                          onClick={(event) => {handleMenuItemClick(event, i); handleClose(); props.setTabindex(1)}} 
+                          onClick={(event) => {handleMenuItemClick(event, i); handleClose();}} 
                           component={Link} 
                           href={option.link} 
                           classes={{root: classes.menuItem}} 
@@ -347,13 +342,13 @@ export default function Header(props) {
                 {routes.map( route =>
                 route.name === "Services" ? 
                 (
-                  <ExpansionPanel key={route.name} elevation={0} classes={{root: classes.expansion}}>
-                    <ExpansionPanelSummary classes={{root: classes.expansionSummary}} expandIcon={<ExpandMoreIcon color="secondary" />}>
-                        <ListItemText classes={{root: classes.drawerItem}} style={{opacity: props.tabIndex === 1 ? 1 : null}} disableTypography onClick={() => {setOpenDrawer(false); props.setTabindex(route.activeIndex)}}>
+                  <Accordion key={route.name} elevation={0} classes={{root: classes.expansion}}>
+                    <AccordionSummary classes={{root: classes.expansionSummary}} expandIcon={<ExpandMoreIcon color="secondary" />}>
+                        <ListItemText classes={{root: classes.drawerItem}} style={{opacity: props.tabIndex === 1 ? 1 : null}} disableTypography onClick={() => {setOpenDrawer(false)}}>
                           <Link color="inherit" href={route.link}> {route.name} </Link>
                         </ListItemText>
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails classes={{root: classes.expansionDetails}}>
+                    </AccordionSummary>
+                    <AccordionDetails  classes={{root: classes.expansionDetails}}>
                         <Grid container direction="column">
                           {menuOptions.map(subroute => (
                             <Grid item key={subroute.name}>
@@ -379,14 +374,14 @@ export default function Header(props) {
                             </Grid>
                           ))}
                         </Grid>
-                    </ExpansionPanelDetails>
-                  </ExpansionPanel>
+                    </AccordionDetails>
+                  </Accordion>
                 ) 
                 : 
                 (
                     <ListItem 
                     key={route.link}
-                    onClick={() => {setOpenDrawer(false); props.setTabindex(route.activeIndex)}} 
+                    onClick={() => {setOpenDrawer(false);}} 
                     divider
                     button
                     component={Link} 
@@ -400,8 +395,8 @@ export default function Header(props) {
                     </ListItem>
                 ))}
                 <ListItem 
-                selected={props.tabIndex === 5} 
-                onClick={() => {setOpenDrawer(false); props.setTabindex(5)}} 
+                selected={props.tabIndex === false} 
+                onClick={() => {setOpenDrawer(false);}} 
                 divider button  
                 component={Link}
                  href="/estimate" 
@@ -427,7 +422,7 @@ export default function Header(props) {
         <ElevationScroll>
             <AppBar position="fixed" className={classes.appbar}>
                 <Toolbar disableGutters>
-                    <Button component={Link} href="/" className={classes.logoContainer} onClick={() => props.setTabindex(0)} disableRipple>
+                    <Button component={Link} href="/" className={classes.logoContainer} disableRipple>
                     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 139" className={classes.logo}>
                       <style>{`.st0{fill:none}.st1{fill:#fff}.st2{font-family:Raleway; font-weight: 300;}.st6{fill:none;stroke:#000;stroke-width:3;stroke-miterlimit:10}`}</style>
                       <path d="M448.07-1l-9.62 17.24-8.36 14.96L369.93 139H-1V-1z"/>

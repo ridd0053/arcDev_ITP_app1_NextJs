@@ -67,59 +67,59 @@ export default function Footer(props) {
                 <Grid container justifyContent="center" className={classes.mainContainer}>
                     <Grid item className={classes.gridItem} >
                         <Grid container direction="column" spacing={2}>
-                            <Grid item className={classes.link} component={Link} href="/" onClick={() => props.setTabindex(0)}>
+                            <Grid item className={classes.link} component={Link} href="/">
                             Home 
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <Grid container direction="column" spacing={2}>
-                            <Grid item className={classes.link} component={Link} href="/services" onClick={() => {props.setTabindex(1); props.setSelectedIndex(0)}}>
+                            <Grid item className={classes.link} component={Link} href="/services">
                                 Services
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/customsoftware" onClick={() => {props.setTabindex(1); props.setSelectedIndex(1)}}>
+                            <Grid item className={classes.link} component={Link} href="/customsoftware">
                                 Custom Sofware Development
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/mobileapps" onClick={() => {props.setTabindex(1); props.setSelectedIndex(2)}}>
+                            <Grid item className={classes.link} component={Link} href="/mobileapps">
                             iOS/Android App Development
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/websites" onClick={() => {props.setTabindex(1); props.setSelectedIndex(3)}}>
+                            <Grid item className={classes.link} component={Link} href="/websites">
                             Website Development
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <Grid container direction="column" spacing={2}>
-                            <Grid item className={classes.link} component={Link} href="/revolution" onClick={() => props.setTabindex(2)}>
+                            <Grid item className={classes.link} component={Link} href="/revolution">
                                 The Revolution
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/revolution" onClick={() => props.setTabindex(2)}>
+                            <Grid item className={classes.link} component={Link} href="/revolution">
                                 Vission
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/revolution" onClick={() => props.setTabindex(2)}>
+                            <Grid item className={classes.link} component={Link} href="/revolution">
                                 Technology
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/revolution" onClick={() => props.setTabindex(2)}>
+                            <Grid item className={classes.link} component={Link} href="/revolution">
                                 Process
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <Grid container direction="column" spacing={2}>
-                            <Grid item className={classes.link} component={Link} href="/about" onClick={() => props.setTabindex(3)}>
+                            <Grid item className={classes.link} component={Link} href="/about">
                                 About us
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/about" onClick={() => props.setTabindex(3)}>
+                            <Grid item className={classes.link} component={Link} href="/about">
                                 History
                             </Grid>
-                            <Grid item className={classes.link} component={Link} href="/about" onClick={() => props.setTabindex(3)}>
+                            <Grid item className={classes.link} component={Link} href="/about">
                                 Team
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <Grid container direction="column" spacing={2}>
-                            <Grid item className={classes.link} component={Link} href="/contact" onClick={() => props.setTabindex(4)}>
+                            <Grid item className={classes.link} component={Link} href="/contact">
                                 Contact us
                             </Grid>
                         </Grid>

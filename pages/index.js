@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
 import Head from "next/head";
+import { LazyLoadImage, LazyLoadComponent } from "react-lazy-load-image-component";
 
 import CallToAction from "../src/ui/CallToAction"
 
@@ -113,11 +114,13 @@ const useStyles = makeStyles(theme => ({
         },
     },
     informationBackground: {
+        position: "absolute",
+        zIndex: -1,
         backgroundImage: `url("/assets/infoBackground.svg")`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        height: "60em",
+        height: "77em",
         width: "100%",
     }
 }))
@@ -152,10 +155,10 @@ export default function LandingPage(props) {
                         </Typography>
                         <Grid container justifyContent="center" className={classes.buttonContainer}>
                             <Grid item>
-                                <Button className={classes.estimateButton} variant="contained" component={Link}  href="/estimate" onClick={() => {props.setTabindex(5) }}>Free Estimate</Button>
+                                <Button className={classes.estimateButton} variant="contained" component={Link}  href="/estimate">Free Estimate</Button>
                             </Grid>
                             <Grid item>
-                                <Button variant="outlined" className={classes.learnButtonHero} component={Link}  href="/revolution" onClick={() => {props.setTabindex(2)}}>
+                                <Button variant="outlined" className={classes.learnButtonHero} component={Link}  href="/revolution">
                                     <span style={{marginRight: 10}}> Learn More </span>
                                     <ButtonArrow width={15} height={15} fill={theme.palette.common.blue}/>
                                 </Button>
@@ -180,13 +183,13 @@ export default function LandingPage(props) {
                             Complete digital solution, from investigation to {" "} 
                             <span className={classes.specialText}>celebration.</span>
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/customsoftware" onClick={() => {props.setTabindex(1); props.setSelectedIndex(1)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/customsoftware" >
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>
                     </Grid>
                     <Grid item>
-                        <img className={classes.icon} src="/assets/customSoftwareIcon.svg" alt="custom software icon" />
+                        <LazyLoadImage className={classes.icon} src="/assets/customSoftwareIcon.svg" alt="custom software icon" />
                     </Grid>
                 </Grid>
             </Grid> {/* End Services block --- Custom software development*/}
@@ -204,13 +207,13 @@ export default function LandingPage(props) {
                             {matchesSM ? null : <br />} 
                             with either mobile platform.
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/mobileapps" onClick={() => {props.setTabindex(1); props.setSelectedIndex(2)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/mobileapps">
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>
                     </Grid>
                     <Grid item style={{marginRight: matchesSM ? 0 : "5em"}}>
-                        <img className={classes.icon} src="/assets/mobileIcon.svg" alt="Mobile icon" />
+                        <LazyLoadImage className={classes.icon} src="/assets/mobileIcon.svg" alt="Mobile icon" />
                     </Grid>
                 </Grid>
             </Grid> {/* End Services block --- iOS/Android App Development*/}
@@ -226,13 +229,13 @@ export default function LandingPage(props) {
                         <Typography variant="subtitle1">
                             Optimized for Search Enignes, {matchesXS && <br />}  built for speed.
                         </Typography>
-                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites" onClick={() => {props.setTabindex(1); props.setSelectedIndex(3)}}>
+                        <Button variant="outlined" className={classes.learnButton} component={Link}  href="/websites">
                             <span style={{marginRight: 10}}> Learn More </span>
                             <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                         </Button>
                     </Grid>
                     <Grid item>
-                        <img className={classes.icon} src="/assets/websiteIcon.svg" alt="Website icon" />
+                        <LazyLoadImage className={classes.icon} src="/assets/websiteIcon.svg" alt="Website icon" />
                     </Grid>
                 </Grid>
             </Grid> {/* End Services block --- Website Development */}
@@ -250,7 +253,7 @@ export default function LandingPage(props) {
                                     <Typography variant="subtitle1" gutterBottom>
                                         Visionary insights coupled with cutting-edge technology is a recipe for revolution.
                                     </Typography>
-                                    <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution" onClick={() => {props.setTabindex(2)}}>
+                                    <Button variant="outlined" className={classes.learnButton} component={Link}  href="/revolution">
                                         <span style={{marginRight: 10}}> Learn More </span>
                                         <ButtonArrow width={10} height={10} fill={theme.palette.common.blue}/>
                                     </Button>
@@ -258,18 +261,20 @@ export default function LandingPage(props) {
                             </Grid>
                         </CardContent>
                     </Card>
-                    <div className={classes.revolutionBackground} />
+                    <LazyLoadComponent threshold={850}>
+                        <div className={classes.revolutionBackground} />
+                    </LazyLoadComponent>
                 </Grid>
             </Grid> {/* End Revolution block */}
             <Grid item> {/* Information block */}
-                <Grid container direction="row" alignItems="center"  className={classes.informationBackground}>
+                <Grid container direction="row" alignItems="center" style={{height: "77em"}}>
                     <Grid item container style={{ textAlign: matchesXS ? "center" : "inherit" }} direction={matchesXS ? "column": "row"}>
                         <Grid item sm style={{ marginLeft: matchesXS ? 0 : matchesSM ? "2em" : "5em" }}>
                             <Grid container direction="column" style={{marginBottom: matchesXS ? "10em" : 0 }}>
                                 <Typography variant="h1" style={{color: "white"}}>About Us</Typography>
                                 <Typography variant="subtitle2" gutterBottom>Let's get personal</Typography>
                                 <Grid item>
-                                    <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/about" onClick={() => {props.setTabindex(3);}}>
+                                    <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/about">
                                         <span style={{marginRight: 10}}> Learn More </span>
                                         <ButtonArrow width={10} height={10} fill="white"/>
                                     </Button>
@@ -281,7 +286,7 @@ export default function LandingPage(props) {
                                 <Typography variant="h1" style={{color: "white"}}>Contact Us</Typography>
                                 <Typography variant="subtitle2" gutterBottom>Say hello!</Typography>
                                 <Grid item>
-                                    <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/contact" onClick={() => {props.setTabindex(4);}}>
+                                    <Button variant="outlined" className={classes.learnButton} style={{color: "white", borderColor: "white"}} component={Link}  href="/contact">
                                         <span style={{marginRight: 10}}> Learn More </span>
                                         <ButtonArrow width={10} height={10} fill="white"/>
                                     </Button>
@@ -289,10 +294,15 @@ export default function LandingPage(props) {
                             </Grid>
                         </Grid>
                     </Grid>
+                    <LazyLoadComponent threshold={700}>
+                        <div className={classes.informationBackground} />
+                    </LazyLoadComponent>
                 </Grid>
             </Grid>{/* End Information block */}
             <Grid item> {/* Call To Action block */}
-                <CallToAction setTabIndex={props.setTabIndex} />
+                <LazyLoadComponent threshold={700}>
+                    <CallToAction />
+                </LazyLoadComponent>
             </Grid> {/* End Call To Action block */}
         </Grid>
      

@@ -60,7 +60,7 @@ export default function MobileApps(props) {
             <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer} style={{marginRight: "1em", marginLeft: "-3.5em"}}>
-                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/customsoftware" onClick={() => {props.setTabindex(1); props.setSelectedIndex(1)}}>
+                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/customsoftware">
                             <img src="/assets/backArrow.svg" alt="Back to Custom Software Development Page" />
                         </IconButton>
                     </Grid>
@@ -88,7 +88,7 @@ export default function MobileApps(props) {
                 </Grid>
                 <Hidden mdDown>
                     <Grid item className={classes.arrowContainer}>
-                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/websites" onClick={() => {props.setTabindex(1); props.setSelectedIndex(3)}}>
+                        <IconButton style={{backgroundColor: "transparent"}} component={Link}  href="/websites">
                             <img src="/assets/forwardArrow.svg" alt="Forward to Website Development Page" />
                         </IconButton>
                     </Grid>
@@ -169,7 +169,7 @@ export default function MobileApps(props) {
                 </Grid>
             </Grid> {/* End Extend  */}
             <Grid item>
-                <CallToAction setTabindex={props.setTabindex} />
+                <CallToAction />
             </Grid>
         </Grid>
     )
