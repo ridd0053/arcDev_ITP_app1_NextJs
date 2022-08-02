@@ -45,12 +45,12 @@ function ElevationScroll(props) {
   const useStyles = makeStyles(theme => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: "9em",
+        marginBottom: "8.5em",
         [theme.breakpoints.down('md')]: {
-            marginBottom: "9em",
+            marginBottom: "10.5em",
         },
         [theme.breakpoints.down('xs')]: {
-            marginBottom: "9em",
+            marginBottom: "11.5em"
         },
     },
     logo: {
@@ -116,6 +116,7 @@ function ElevationScroll(props) {
       },
       drawer: {
         backgroundColor: theme.palette.common.blue,
+        zIndex: 2000,
       },
       drawerItem: {
         ...theme.typography.tab,
@@ -133,6 +134,9 @@ function ElevationScroll(props) {
       },
       appbar: {
         zIndex: theme.zIndex.modal + 1,
+        [theme.breakpoints.down('md')]: {
+          paddingRight: "0 !important",
+      },
       },
       expansion: {
         backgroundColor: theme.palette.common.blue,
@@ -172,6 +176,7 @@ export default function Header(props) {
     const [anchorEl, setAnchorEl] = useState(null)
     const [open, setOpen] = useState(false)
     const [openDrawer, setOpenDrawer] = useState(false);
+    
 
     const handleChange = (e, value) => {
         props.setTabindex(value)

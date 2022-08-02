@@ -276,7 +276,7 @@ export default function ProjectManager() {
             </Grid>
           </FormGroup>
         </Grid>
-        <Grid item style={{marginBottom: matchesMD ? "40em" : "35em", marginTop: "5em"}}>
+        <Grid container item style={{marginBottom: matchesMD ? "40em" : "35em", marginTop: "5em"}}>
           <EnhancedTable
               rows={rows}
               setRows={setRows}

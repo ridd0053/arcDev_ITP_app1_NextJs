@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     footer: {
         backgroundColor: theme.palette.common.blue,
         width: "100%",
-        zIndex: 1302,
+        zIndex: 1200,
         position: "relative",
     },
     adornment: {
