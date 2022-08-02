@@ -54,8 +54,8 @@ export default function MobileApps(props) {
                 <title key="title">iOS/Android App Design and Development | Arc Development</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | Mobile Apps' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com/mobileapps' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/mobileapps" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com/mobileapps' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/mobileapps" />
             </Head>
             <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>

@@ -694,8 +694,8 @@ export default function Estimate(props) {
                 <title key="title">Free Custom Software Estimate | Arc Development</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | Estimate' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com/estimate' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/estimate" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com/estimate' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/estimate" />
             </Head>
             {/* Questions */}
             <Grid item container direction="column" lg alignItems={matchesMD ? "center" : undefined}>

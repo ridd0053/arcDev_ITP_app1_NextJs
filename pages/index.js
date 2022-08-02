@@ -144,8 +144,8 @@ export default function LandingPage(props) {
                 <title key="title">Custom Software, Mobile Apps and Websites | Arc Development</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | Home' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com" />
             </Head>
             <Grid item> {/* Hero block*/}
                 <Grid container justifyContent="flex-end" alignItems="center" direction="row">

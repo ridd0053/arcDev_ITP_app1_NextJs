@@ -85,8 +85,8 @@ export default function CustomSoftware(props) {
                 <title key="title">Custom Software Development and Design - Free Estimate</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | Custom Software' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com/customsoftware' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/customsoftware" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com/customsoftware' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/customsoftware" />
             </Head>
             <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>

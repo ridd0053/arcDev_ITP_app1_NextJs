@@ -62,8 +62,8 @@ const useStyles = makeStyles(theme => ({
                 <title key="title">About Us - History {"&"} Team | Arc Development</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | About Us' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com/about' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/about" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com/about' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/about" />
             </Head>
             {/* Title*/}
             <Grid item className={classes.rowContainer} style={{marginTop: matchesMD ? "1em" : "2em"}}>

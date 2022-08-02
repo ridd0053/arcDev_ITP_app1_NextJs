@@ -4,7 +4,7 @@ const formatDate = require("./formatDate");
 
 // ROBOTS.txt
 const robotsTxt = `User-agent: *
-Sitemap: https://itpArcCourseMatUdem.com/sitemap_local.xml
+Sitemap: https://itp-course-material-ui.herokuapp.com//sitemap_local.xml
 Disallow:`;
 
 fs.writeFileSync("public/robots.txt", robotsTxt);
@@ -22,8 +22,8 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
       path => `<url>
     ${
       path === "/index"
-        ? `<loc>https://itpArcCourseMatUdem.com</loc>`
-        : `<loc>https://itpArcCourseMatUdem.com${path}</loc>`
+        ? `<loc>https://itp-course-material-ui.herokuapp.com/</loc>`
+        : `<loc>https://itp-course-material-ui.herokuapp.com/${path}</loc>`
     }
     <lastmod>${
       pathsObj[path].lastModified

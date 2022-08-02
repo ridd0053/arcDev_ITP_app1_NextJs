@@ -154,8 +154,8 @@ export default function Revolution(props) {
                 <title key="title">The Revolution - Cutting-Edge Software | Arc Development</title>
                 <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
                 <meta property='og:title' content='Course Website | Revolution' key="og:title" />
-                <meta property='og:url' content='itpArcCourseMatUdem.com/revolution' key="og:url" />
-                <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/revolution" />
+                <meta property='og:url' content='itp-course-material-ui.herokuapp.com/revolution' key="og:url" />
+                <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/revolution" />
             </Head>
             {/* Header */}
             <Grid item className={classes.rowContainer} style={{marginTop: "2em"}}> 

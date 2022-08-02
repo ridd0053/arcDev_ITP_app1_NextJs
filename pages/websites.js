@@ -43,8 +43,8 @@ export default function Websites(props) {
             <title key="title">Stunnig Custom Website Design | Arc Development</title>
             <meta name="description" key="description" content="Dit is een website gemaakt op basis van een cursus." />
             <meta property='og:title' content='Course Website | Websites' key="og:title" />
-            <meta property='og:url' content='itpArcCourseMatUdem.com/websites' key="og:url" />
-            <link rel="canonical" key="canonical" href="itpArcCourseMatUdem.com/websites" />
+            <meta property='og:url' content='itp-course-material-ui.herokuapp.com/websites' key="og:url" />
+            <link rel="canonical" key="canonical" href="itp-course-material-ui.herokuapp.com/websites" />
         </Head>
         <Grid item container direction="row" justifyContent={matchesMD ? "center" : undefined} className={classes.rowContainer} style={{marginTop: matchesXS ? "1em" : "2em"}}> {/* Header */}
                 <Hidden mdDown>
