@@ -26,7 +26,7 @@
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.4",
     "prop-types": "latest",
-    "react": "latest --force",
+    "react": "latest",
     "react-dom": "latest",
     "react-ga": "^2.7.0",
     "react-lazy-load-image-component": "^1.4.3",
