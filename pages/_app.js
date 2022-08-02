@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import ReactGA from 'react-ga';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -8,6 +9,8 @@ import Footer from "../src/ui/Footer";
 import Fonts from '../src/ui/Font';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
+
+ReactGA.initialize("G-E4JN1JS50L");
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
