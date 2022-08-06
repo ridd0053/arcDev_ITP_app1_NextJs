@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import ReactGA from 'react-ga';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -8,15 +7,32 @@ import Header from "../src/ui/Header";
 import Footer from "../src/ui/Footer";
 import Fonts from '../src/ui/Font';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
-
-
-ReactGA.initialize("G-E4JN1JS50L");
+import { useRouter } from "next/router";
+import { pageview } from "../lib/ga";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
   const [value, setValue] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const handleRouteChange = (url) => {
+      pageview(url);
+    };
+
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.

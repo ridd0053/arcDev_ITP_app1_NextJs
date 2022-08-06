@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo } from "react";
-import ReactGA from 'react-ga';
 import { makeStyles, useTheme } from "@material-ui/styles";
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import AppBar from "@material-ui/core/AppBar";
@@ -29,6 +28,7 @@ import AccordionDetails  from "@material-ui/core/AccordionDetails";
 import Grid from "@material-ui/core/Grid";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Typography } from "@material-ui/core";
+import { event } from "../../lib/ga"
 
 // Adds shadow effect to the header when user scrolls the page
 function ElevationScroll(props) {
@@ -261,7 +261,6 @@ export default function Header(props) {
         }
         else {
           props.setTabindex(found.activeIndex)
-          ReactGA.pageview(window.location.pathname + window.location.search)
         }
       }
 
@@ -286,7 +285,7 @@ export default function Header(props) {
                     />
                 ))}
             </Tabs>
-            <Button variant="contained" color="secondary" className={classes.button} component={Link}  href="/estimate" onClick={() => ReactGA.event({category: "Estimate", action: "Desktop Header Pressed"})}>Free Estimate</Button>
+            <Button variant="contained" color="secondary" className={classes.button} component={Link}  href="/estimate" onClick={() => event({params:{category: "Estimate"}, action: "Desktop Header Pressed"})}>Free Estimate</Button>
             <Popper
               open={open}
               anchorEl={anchorEl}
@@ -411,7 +410,7 @@ export default function Header(props) {
                 ))}
                 <ListItem 
                 selected={props.tabIndex === false} 
-                onClick={() => {setOpenDrawer(false); ReactGA.event({category: "Estimate", action: "Mobile Header Pressed"}); }} 
+                onClick={() => {setOpenDrawer(false); event({params:{category: "Estimate"}, action: "Mobile Header Pressed"}); }} 
                 divider button  
                 component={Link}
                  href="/estimate" 

@@ -12,6 +12,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import emailjs from '@emailjs/browser';
 import Head from "next/head";
+import { event } from "../lib/ga";
 
 import ButtonArrow from "../src/ui/ButtonArrow"
 
@@ -138,6 +139,7 @@ const useStyles = makeStyles(theme => ({
             setMessage("");
             setOpen(false);
             setAlert({open: true, message:"Message send successfully", backgroundColor:"#4BB543"})
+            event({params:{category: "contact form"}, action: "Send email"})
 
         }, function(error) {
             console.log('FAILED...', error);
@@ -229,8 +231,7 @@ const useStyles = makeStyles(theme => ({
                             <Button variant="contained" 
                             disabled={isDisabled}
                             className={classes.sendButton}
-                            onClick={() => setOpen(true)}
-                            >
+                            onClick={() => {setOpen(true); event({params:{category: "contact form"}, action: "Open dialog"})}}>
                                 {buttonContent}
                             </Button>
                         </Grid>

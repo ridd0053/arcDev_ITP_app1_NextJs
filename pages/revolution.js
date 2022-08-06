@@ -245,8 +245,8 @@ export default function Revolution(props) {
                         </Typography>
                     </Grid>
                     <Grid item>
-                        {section.paragraphs.map(paragraph => (
-                        <Typography variant="body1" paragraph align={matchesMD ? "center" : undefined} style={{ color: "#fff", maxWidth: "20em" }}>
+                        {section.paragraphs.map((paragraph, index) => (
+                        <Typography key={index} variant="body1" paragraph align={matchesMD ? "center" : undefined} style={{ color: "#fff", maxWidth: "20em" }}>
                             {paragraph}
                         </Typography>))}
                     </Grid>

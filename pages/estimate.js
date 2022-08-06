@@ -16,6 +16,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import useMediaQuery  from "@material-ui/core/useMediaQuery";
 import emailjs from '@emailjs/browser';
 import Head from "next/head";
+import { event } from "../lib/ga";
 
 import estimateAnimation from "../src/animations/estimateAnimation/data.json";
 
@@ -571,6 +572,7 @@ export default function Estimate(props) {
             setMessage("");
             setDialogOpen(false);
             setAlert({open: true, message:"Your estimate is send successfully", backgroundColor:"#4BB543"})
+            event({params:{category: "estimate form"}, action: "Send email"})
 
         }, function(error) {
             console.log('FAILED...', error);
@@ -753,7 +755,7 @@ export default function Estimate(props) {
                     </Grid>
                 </Grid>
                 <Grid item >
-                    <Button variant="contained" disabled={esitimateDisabled()} onClick={() => {setDialogOpen(true); getTotal(); getSelections();}} className={classes.estimateButton}>
+                    <Button variant="contained" disabled={esitimateDisabled()} onClick={() => {setDialogOpen(true); getTotal(); getSelections(); event({params:{category: "estimate form"}, action: "Open dialog"})}} className={classes.estimateButton}>
                         Get Estimate
                     </Button>
                 </Grid>
